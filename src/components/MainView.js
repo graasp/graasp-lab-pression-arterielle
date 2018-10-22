@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row } from 'reactstrap';
+import ImageManager from './ImageManager';
 
 const MainView = ({
   heartClass, pressionClass, handleSection,
 }) => (
   <Row className="px-5">
-    <div
+    <ImageManager
       heartClass={heartClass}
       pressionClass={pressionClass}
       handleSection={handleSection}
