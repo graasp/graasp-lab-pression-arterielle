@@ -1,22 +1,41 @@
-import React from 'react';
-import { Alert, Container } from 'reactstrap';
-import Logo from '../logo.svg';
+import React, { Component } from 'react';
+import MainView from '../components/MainView';
 
-const StudentView = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={Logo} className="App-logo" alt="Logo" />
-      <h1 className="App-title">Welcome to the Graasp App Starter Kit</h1>
-    </header>
-    <Container className="App-body">
-      <Alert color="info">
-        This is the student view. Switch to the teacher view by clicking on the URL below.
-        <a href="?mode=teacher">
-          <pre>{`${window.location.host}/?mode=teacher`}</pre>
-        </a>
-      </Alert>
-    </Container>
-  </div>
-);
+class StudentView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addClass: false,
+      intensity: 'moyen',
+    };
+  }
+
+  handleSection = () => {
+    const { addClass } = this.state;
+    this.setState({
+      addClass: !addClass,
+    });
+  };
+
+  render() {
+    const { addClass, intensity } = this.state;
+    const pressionClass = ['pression'];
+    const heartClass = ['heart'];
+    if (addClass) {
+      pressionClass.push('pression-enable');
+      heartClass.push('heart-enable');
+    }
+    return (
+      <div className="App pt-5">
+        <MainView
+          pressionClass={pressionClass}
+          heartClass={heartClass}
+          intensity={intensity}
+          handleSection={this.handleSection}
+        />
+      </div>
+    );
+  }
+}
 
 export default StudentView;
