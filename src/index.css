@@ -1,5 +1,67 @@
 body {
+  background: #fff5fe;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+@keyframes beat{
+	to { transform: scale(1.05); }
+}
+
+svg {
+  overflow: inherit !important;
+}
+
+#organ_5, #organ_10, #organ_11, #organ_17, #organ_16 {
+  cursor: pointer;
+  fill-opacity: 0;
+  stroke-opacity: 0.2;
+  vector-effect: "non-scaling-stroke";
+  fill: #FF0000;
+  stroke: #FF0000;
+}
+
+#organ_5 {
+  animation: beat 1.3s infinite alternate;
+	transform-origin: center;
+  fill-opacity: 0.6;
+}
+
+#pression-disable {
+  stroke: #004eff;
+  fill: transparent;
+  vector-effect: "non-scaling-stroke";
+  stroke-width: 5;
+  fill-opacity: 0.6;
+  stroke-opacity: 0.2;
+  cursor: pointer;
+}
+
+#organ_11 {
+  fill: rgb(245 181 173);
+  fill-opacity: 1;
+}
+
+#organ_17:hover, #organ_5:hover, #organ_10:hover, #organ_11:hover, #organ_17:hover, #organ_16:hover {
+  fill: #FF0000;
+  fill-opacity: 0.8;
+  stroke-opacity: 1;
+}
+
+#pression-disable:hover {
+  fill-opacity: 0.8;
+  stroke-opacity: 1;
+}
+
+.heart-enable {
+  animation: beat .3s infinite alternate !important;
+	transform-origin: center !important;
+  fill-opacity: 0.8 !important;
+  stroke-opacity: 1 !important;
+}
+
+.pression-enable {
+  fill-opacity: 0.8 !important;
+  stroke-opacity: 1 !important;
 }
