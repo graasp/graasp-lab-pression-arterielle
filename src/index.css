@@ -24,7 +24,6 @@ svg {
 
 #organ_5 {
   animation: beat 1.3s infinite alternate;
-	transform-origin: center;
   fill-opacity: 0.6;
 }
 
@@ -57,7 +56,6 @@ svg {
 
 .heart-enable {
   animation: beat .3s infinite alternate !important;
-	transform-origin: center !important;
   fill-opacity: 0.8 !important;
   stroke-opacity: 1 !important;
 }
