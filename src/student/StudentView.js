@@ -8,6 +8,7 @@ class StudentView extends Component {
       addClass: false,
       intensity: 'moyen',
     };
+    this.handleSection = this.handleSection.bind(this);
   }
 
   handleSection = () => {
@@ -19,16 +20,19 @@ class StudentView extends Component {
 
   render() {
     const { addClass, intensity } = this.state;
-    const pressionClass = ['pression'];
+    const pressionBottomClass = ['pression'];
+    const sices = ['sices'];
     const heartClass = ['heart'];
     if (addClass) {
-      pressionClass.push('pression-enable');
+      pressionBottomClass.push('pression-enable-nerf-bottom');
       heartClass.push('heart-enable');
+      sices.push('sices-enable');
     }
     return (
       <div className="App pt-5">
         <MainView
-          pressionClass={pressionClass}
+          pressionBottomClass={pressionBottomClass}
+          sices={sices}
           heartClass={heartClass}
           intensity={intensity}
           handleSection={this.handleSection}
