@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageManager = ({
-  heartClass, pressionBottomClass, handleSection, sices,
+  heartClass, pressionBottomClass, handleSection, sices, t,
 }) => (
   <Col md={12}>
     <svg xmlns="http://www.w3.org/2000/svg" width="1042px" height="702px" viewBox="0 0 1042 702" version="1.1">
@@ -169,28 +169,7 @@ const ImageManager = ({
                 fontWeight="normal"
                 fill="#000000"
               >
-                <tspan x="23" y="31">Sinus Carotidien</tspan>
-              </text>
-            </g>
-            <g id="Nerf-sympathique" transform="translate(492.000000, 653.000000)">
-              <rect
-                id="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="206"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Nerf-Sympathique"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="23" y="33">Nerf Sympathique</tspan>
+                <tspan x="23" y="31">{t('Sinus')}</tspan>
               </text>
             </g>
             <g id="Nerf-parasympathique" transform="translate(492.000000, 653.000000)">
@@ -211,7 +190,7 @@ const ImageManager = ({
                 fontWeight="normal"
                 fill="#000000"
               >
-                <tspan x="17" y="32">Nerf Sympathique</tspan>
+                <tspan x="17" y="32">{t('NerfSymp')}</tspan>
               </text>
             </g>
             <g id="Nerf-parasympathique" transform="translate(13.000000, 378.000000)">
@@ -232,7 +211,7 @@ const ImageManager = ({
                 fontWeight="normal"
                 fill="#000000"
               >
-                <tspan x="20" y="30">Nerf Parasympathique</tspan>
+                <tspan x="20" y="30">{t('NerfPara')}</tspan>
               </text>
             </g>
             <g id="Nerf-hering" transform="translate(134.000000, 49.000000)">
@@ -253,7 +232,7 @@ const ImageManager = ({
                 fontWeight="normal"
                 fill="#000000"
               >
-                <tspan x="13" y="30">Nerf de Hering</tspan>
+                <tspan x="13" y="30">{t('NerfHer')}</tspan>
               </text>
             </g>
             <g id="Moelle-epienere" transform="translate(31.000000, 505.000000)">
@@ -274,7 +253,7 @@ const ImageManager = ({
                 fontWeight="normal"
                 fill="#000000"
               >
-                <tspan x="23" y="31">Moelle épinière</tspan>
+                <tspan x="23" y="31">{t('Moelle')}</tspan>
               </text>
             </g>
             <g id="Bulbe-rachidien" transform="translate(0.000000, 165.000000)">
@@ -295,7 +274,7 @@ const ImageManager = ({
                 fontWeight="normal"
                 fill="#000000"
               >
-                <tspan x="23" y="32">Bulbe Rachidien</tspan>
+                <tspan x="23" y="32">{t('Bulbe')}</tspan>
               </text>
             </g>
           </g>
@@ -338,6 +317,7 @@ const ImageManager = ({
 
 ImageManager.propTypes = {
   handleSection: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   pressionBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   sices: PropTypes.arrayOf(PropTypes.string).isRequired,
