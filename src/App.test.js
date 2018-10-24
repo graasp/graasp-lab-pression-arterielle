@@ -6,6 +6,7 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   const props = {
     t: jest.fn(),
+    i18n: {},
   };
 
   ReactDOM.render(<App {...props} />, div);
