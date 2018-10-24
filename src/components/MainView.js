@@ -4,11 +4,12 @@ import { Row } from 'reactstrap';
 import ImageManager from './ImageManager';
 
 const MainView = ({
-  heartClass, pressionBottomClass, handleSection, sices,
+  heartClass, pressionBottomClass, handleSection, sices, t,
 }) => (
-  <Row className="px-5">
+  <Row className="px-5 pt-5">
     <ImageManager
       sices={sices}
+      t={t}
       heartClass={heartClass}
       pressionBottomClass={pressionBottomClass}
       handleSection={handleSection}
@@ -18,6 +19,7 @@ const MainView = ({
 
 MainView.propTypes = {
   handleSection: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   pressionBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   sices: PropTypes.arrayOf(PropTypes.string).isRequired,
