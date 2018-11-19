@@ -14,7 +14,6 @@ class StudentView extends Component {
     this.state = {
       addClass: false,
     };
-    this.handleSection = this.handleSection.bind(this);
   }
 
   handleSection = () => {
@@ -40,7 +39,7 @@ class StudentView extends Component {
     };
 
     return (
-      <div className="App pt-5">
+      <div className="App">
         <Button onClick={() => changeLanguage('fr')} className="btn btn-outline-primary">Fr</Button>
         <Button onClick={() => changeLanguage('en')} className="btn btn-outline-primary ml-2">En</Button>
 
