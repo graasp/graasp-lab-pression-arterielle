@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageManager = ({
-  heartClass, pressionBottomClass, handleSection, scissors, t,
+  heartClass, pressureBottomClass, handleSection, scissors, t,
 }) => (
   <Col md={12}>
     <svg xmlns="http://www.w3.org/2000/svg" width="1042px" height="702px" viewBox="0 0 1042 702" version="1.1">
@@ -101,7 +101,7 @@ const ImageManager = ({
             <path
               d="M0,354.5 C73.4614954,319.105827 123.945331,306.355821 151.451508,316.24998 C190.726221,330.377361 355.40199,369.360181 402.427182,369.827807 C405.337815,369.856751 402.427182,369.360181 411.717364,369.827807 C495.487829,374.044437 536.117961,330.935168 533.607759,240.5"
               id="Nerf-bottom"
-              className={pressionBottomClass.join(' ')}
+              className={pressureBottomClass.join(' ')}
             />
             <path
               d="M6,144.667697 C78.3727655,167.882776 127.400481,173.703318 153.083145,162.129322 C210.598203,136.209931 237.427604,42.9124286 290.169964,30.4188092 C378.239534,9.55687407 449.571546,-0.418340872 504.166,0.493164386"
@@ -319,7 +319,7 @@ ImageManager.propTypes = {
   handleSection: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
   heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pressionBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
+  pressureBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   scissors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

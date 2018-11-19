@@ -27,7 +27,7 @@ svg {
   fill-opacity: 0.6;
 }
 
-#pression-disable {
+#pressure-disable {
   stroke: #004eff;
   fill: transparent;
   vector-effect: "non-scaling-stroke";
@@ -49,7 +49,7 @@ svg {
   stroke-opacity: 1;
 }
 
-#pression-disable:hover {
+#pressure-disable:hover {
   fill-opacity: 0.8;
   stroke-opacity: 1;
 }
@@ -60,7 +60,7 @@ svg {
   stroke-opacity: 1 !important;
 }
 
-.pression-enable-nerf-bottom {
+.pressure-enable-nerf-bottom {
   stroke: rgb(200, 159, 64) !important;
 }
 

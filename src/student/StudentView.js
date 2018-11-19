@@ -27,11 +27,11 @@ class StudentView extends Component {
 
   render() {
     const { addClass, intensity } = this.state;
-    const pressionBottomClass = ['pression'];
+    const pressureBottomClass = ['pressure'];
     const scissors = ['scissors'];
     const heartClass = ['heart'];
     if (addClass) {
-      pressionBottomClass.push('pression-enable-nerf-bottom');
+      pressureBottomClass.push('pressure-enable-nerf-bottom');
       heartClass.push('heart-enable');
       scissors.push('scissors-enable');
     }
@@ -46,7 +46,7 @@ class StudentView extends Component {
         <Button onClick={() => changeLanguage('en')} className="btn btn-outline-primary ml-2">En</Button>
 
         <MainView
-          pressionBottomClass={pressionBottomClass}
+          pressureBottomClass={pressureBottomClass}
           scissors={scissors}
           heartClass={heartClass}
           intensity={intensity}

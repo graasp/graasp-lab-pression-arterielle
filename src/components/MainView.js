@@ -7,7 +7,7 @@ import './MainView.css';
 const MainView = ({
   heartClass,
   handleSection,
-  pressionBottomClass,
+  pressureBottomClass,
   scissors,
   t,
 }) => (
@@ -16,7 +16,7 @@ const MainView = ({
       scissors={scissors}
       t={t}
       heartClass={heartClass}
-      pressionBottomClass={pressionBottomClass}
+      pressureBottomClass={pressureBottomClass}
       handleSection={handleSection}
     />
   </Row>
@@ -26,7 +26,7 @@ MainView.propTypes = {
   handleSection: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
   heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pressionBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
+  pressureBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   scissors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
