@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageManager = ({
-  heartClass, pressureBottomClass, handleSection, scissors, t,
+  heartBeat, pressure, handleSection, applySection, t,
 }) => (
   <Col md={12}>
     <svg xmlns="http://www.w3.org/2000/svg" width="1042px" height="702px" viewBox="0 0 1042 702" version="1.1">
@@ -14,7 +14,7 @@ const ImageManager = ({
               d="M204.314,145.667 C204.128,144.75 199.917,144.834 197.834,144.834 C195.751,144.834 202,141.584 203.667,140.334 C205.334,139.084 203.333,137.834 202.667,137.167 C202.001,136.5 190.5,142.167 187.167,143.834 C183.834,145.501 180.667,142.834 177.833,140.834 C181.666,138.834 187.667,139.501 189.833,139.834 C191.999,140.167 194.333,135.667 193,134.167 C191,134.167 188,135 183.167,131.334 C186.667,129.667 193.5,126.667 196,125.834 C198.5,125.001 197.5,122.167 196.667,120.834 C181.416,120.998 172,121.126 163.833,127.834 C156.916,126.167 149,127.501 145.875,129.126 C144.25,126.251 137.5,123.001 132.75,121.626 C128,120.251 114.375,114.876 114.75,120.274 C115.125,125.672 120.75,127.001 124.375,128.251 C128,129.501 121,130.125 118,130.875 C115,131.625 114.5,136.125 114.75,138.625 C115,141.125 125.25,140.25 128.786,139.625 C127.822,140.875 126.625,142 125.625,143.875 C106.75,143.625 107.343,136.359 106.015,139 C103.5,144 107.125,145.875 111.5,147.25 C104.875,148.5 105.75,151.125 106.581,153.125 C107.412,155.125 107.125,154.5 106.625,156.75 C106.125,159 110,158 110.125,158.875 C110.25,159.75 108,160.375 108.625,164 C109.25,167.625 117.167,160.5 120.167,159.785 C115.832,187.424 126.5,195.75 130.5,194.833 C137.375,207.875 150.74,210.88 156.5,213.166 C167,217.333 185.25,222.499 196.167,210.999 C207.084,199.499 198,178.166 193.334,172.666 C188.668,167.166 189.123,164.336 190,162.09 C191.5,158.25 198.25,166.25 201.75,160.333 C202.633,158.841 196.167,157.666 195.834,157.25 C195.501,156.834 200.5,154.333 199,151.333 C197.5,148.333 187.25,161.666 186.013,153.666 C184.776,145.666 201,149.416 203.667,149.416 C206.334,149.416 204.5,146.583 204.314,145.667 Z M121.848,154.28 C119.083,154.584 99.692,154.92 122.346,149.918 C122.165,151.49 121.977,153.119 121.848,154.28 Z"
               id="heart"
               fillRule="nonzero"
-              className={heartClass.join(' ')}
+              className={heartBeat ? 'heart heart-enable' : 'heart'}
             />
             <path
               d="M185.471,139.46 C185.571,143.159 185.904,151.681 186.013,153.666 C182.5,151.167 167.501,136.166 164.834,131 C162.167,125.834 156.334,126 152.834,130 C149.334,134 133.03,151.226 121.849,154.28 C122.347,149.918 123.301,141.914 123.641,139.143 C130.587,139.719 145.667,120.833 147.667,109.166 C149.667,97.499 150.001,77.666 149.167,45.999 C153.5,42.666 156.167,39.166 165.167,47.832 C165.5,57.165 164.834,94.008 165.334,98.336 C165.834,102.664 169.941,122.421 185.471,139.46 Z"
@@ -101,7 +101,7 @@ const ImageManager = ({
             <path
               d="M0,354.5 C73.4614954,319.105827 123.945331,306.355821 151.451508,316.24998 C190.726221,330.377361 355.40199,369.360181 402.427182,369.827807 C405.337815,369.856751 402.427182,369.360181 411.717364,369.827807 C495.487829,374.044437 536.117961,330.935168 533.607759,240.5"
               id="Nerf-bottom"
-              className={pressureBottomClass.join(' ')}
+              className={pressure ? 'pressure pressure-enable-nerf-bottom' : 'pressure'}
             />
             <path
               d="M6,144.667697 C78.3727655,167.882776 127.400481,173.703318 153.083145,162.129322 C210.598203,136.209931 237.427604,42.9124286 290.169964,30.4188092 C378.239534,9.55687407 449.571546,-0.418340872 504.166,0.493164386"
@@ -121,7 +121,7 @@ const ImageManager = ({
               rx="6.5"
               ry="11"
               onClick={handleSection}
-              className={scissors.join(' ')}
+              className={applySection ? 'scissors scissors-enable' : 'scissors'}
             />
             <ellipse
               id="Oval_2"
@@ -131,7 +131,7 @@ const ImageManager = ({
               rx="6.5"
               ry="11"
               onClick={handleSection}
-              className={scissors.join(' ')}
+              className={applySection ? 'scissors scissors-enable' : 'scissors'}
             />
             <path
               d="M11.1612903,4 L31,69.8263158"
@@ -139,7 +139,7 @@ const ImageManager = ({
               stroke="#555"
               strokeLinecap="square"
               onClick={handleSection}
-              className={scissors.join(' ')}
+              className={applySection ? 'scissors scissors-enable' : 'scissors'}
             />
             <path
               d="M45.6761905,4.35 L12,66.825"
@@ -147,7 +147,7 @@ const ImageManager = ({
               stroke="#555"
               strokeLinecap="square"
               onClick={handleSection}
-              className={scissors.join(' ')}
+              className={applySection ? 'scissors scissors-enable' : 'scissors'}
             />
           </g>
           <g id="differents-organes">
@@ -318,9 +318,9 @@ const ImageManager = ({
 ImageManager.propTypes = {
   handleSection: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
-  heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pressureBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  scissors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  heartBeat: PropTypes.bool.isRequired,
+  pressure: PropTypes.bool.isRequired,
+  applySection: PropTypes.bool.isRequired,
 };
 
 

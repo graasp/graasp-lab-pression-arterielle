@@ -12,41 +12,47 @@ class StudentView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addClass: false,
+      applySection: false,
+      heartBeat: false,
+      pressure: false,
     };
+    this.handleSection = this.handleSection.bind(this);
   }
 
   handleSection = () => {
-    const { addClass } = this.state;
+    const {
+      applySection,
+      heartBeat,
+      pressure,
+    } = this.state;
     this.setState({
-      addClass: !addClass,
+      applySection: !applySection,
+      pressure: !pressure,
+      heartBeat: !heartBeat,
     });
   };
 
   render() {
-    const { addClass } = this.state;
-    const pressureBottomClass = ['pressure'];
-    const scissors = ['scissors'];
-    const heartClass = ['heart'];
-    if (addClass) {
-      pressureBottomClass.push('pressure-enable-nerf-bottom');
-      heartClass.push('heart-enable');
-      scissors.push('scissors-enable');
-    }
+    const {
+      applySection,
+      heartBeat,
+      pressure,
+    } = this.state;
+
     const { i18n, t } = this.props;
     const changeLanguage = (lng) => {
       i18n.changeLanguage(lng);
     };
 
     return (
-      <div className="App">
+      <div className="App pt-5">
         <Button onClick={() => changeLanguage('fr')} className="btn btn-outline-primary">Fr</Button>
         <Button onClick={() => changeLanguage('en')} className="btn btn-outline-primary ml-2">En</Button>
 
         <MainView
-          pressureBottomClass={pressureBottomClass}
-          scissors={scissors}
-          heartClass={heartClass}
+          pressure={pressure}
+          applySection={applySection}
+          heartBeat={heartBeat}
           handleSection={this.handleSection}
           t={t}
         />

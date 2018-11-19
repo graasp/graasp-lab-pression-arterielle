@@ -5,29 +5,29 @@ import ImageManager from './ImageManager';
 import './MainView.css';
 
 const MainView = ({
-  heartClass,
+  heartBeat,
   handleSection,
-  pressureBottomClass,
-  scissors,
+  pressure,
+  applySection,
   t,
 }) => (
   <Row className="Main">
     <ImageManager
-      scissors={scissors}
+      applySection={applySection}
       t={t}
-      heartClass={heartClass}
-      pressureBottomClass={pressureBottomClass}
+      heartBeat={heartBeat}
+      pressure={pressure}
       handleSection={handleSection}
     />
   </Row>
 );
 
 MainView.propTypes = {
+  applySection: PropTypes.bool.isRequired,
   handleSection: PropTypes.func.isRequired,
+  heartBeat: PropTypes.arrayOf(PropTypes.string).isRequired,
+  pressure: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
-  heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  pressureBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  scissors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default MainView;
