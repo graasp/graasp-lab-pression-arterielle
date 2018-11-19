@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row } from 'reactstrap';
 import ImageManager from './ImageManager';
+import './MainView.css';
 
 const MainView = ({
   heartClass, pressionBottomClass, handleSection, sices, t,
 }) => (
-  <Row className="px-5 pt-5">
+  <Row className="Main">
     <ImageManager
       sices={sices}
       t={t}
