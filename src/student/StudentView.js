@@ -28,12 +28,12 @@ class StudentView extends Component {
   render() {
     const { addClass, intensity } = this.state;
     const pressionBottomClass = ['pression'];
-    const sices = ['sices'];
+    const scissors = ['scissors'];
     const heartClass = ['heart'];
     if (addClass) {
       pressionBottomClass.push('pression-enable-nerf-bottom');
       heartClass.push('heart-enable');
-      sices.push('sices-enable');
+      scissors.push('scissors-enable');
     }
     const { i18n, t } = this.props;
     const changeLanguage = (lng) => {
@@ -47,7 +47,7 @@ class StudentView extends Component {
 
         <MainView
           pressionBottomClass={pressionBottomClass}
-          sices={sices}
+          scissors={scissors}
           heartClass={heartClass}
           intensity={intensity}
           handleSection={this.handleSection}

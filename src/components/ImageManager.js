@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageManager = ({
-  heartClass, pressionBottomClass, handleSection, sices, t,
+  heartClass, pressionBottomClass, handleSection, scissors, t,
 }) => (
   <Col md={12}>
     <svg xmlns="http://www.w3.org/2000/svg" width="1042px" height="702px" viewBox="0 0 1042 702" version="1.1">
@@ -112,7 +112,7 @@ const ImageManager = ({
               id="Nerf-mid"
             />
           </g>
-          <g id="sices" transform="translate(464.500000, 501.000000) scale(1, -1) translate(-464.500000, -501.000000) translate(437.000000, 466.000000)">
+          <g id="scissors" transform="translate(464.500000, 501.000000) scale(1, -1) translate(-464.500000, -501.000000) translate(437.000000, 466.000000)">
             <ellipse
               id="Oval_1"
               fill="#555"
@@ -121,7 +121,7 @@ const ImageManager = ({
               rx="6.5"
               ry="11"
               onClick={handleSection}
-              className={sices.join(' ')}
+              className={scissors.join(' ')}
             />
             <ellipse
               id="Oval_2"
@@ -131,7 +131,7 @@ const ImageManager = ({
               rx="6.5"
               ry="11"
               onClick={handleSection}
-              className={sices.join(' ')}
+              className={scissors.join(' ')}
             />
             <path
               d="M11.1612903,4 L31,69.8263158"
@@ -139,7 +139,7 @@ const ImageManager = ({
               stroke="#555"
               strokeLinecap="square"
               onClick={handleSection}
-              className={sices.join(' ')}
+              className={scissors.join(' ')}
             />
             <path
               d="M45.6761905,4.35 L12,66.825"
@@ -147,7 +147,7 @@ const ImageManager = ({
               stroke="#555"
               strokeLinecap="square"
               onClick={handleSection}
-              className={sices.join(' ')}
+              className={scissors.join(' ')}
             />
           </g>
           <g id="differents-organes">
@@ -320,7 +320,7 @@ ImageManager.propTypes = {
   t: PropTypes.func.isRequired,
   heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   pressionBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  sices: PropTypes.arrayOf(PropTypes.string).isRequired,
+  scissors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 

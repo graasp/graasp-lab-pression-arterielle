@@ -5,11 +5,15 @@ import ImageManager from './ImageManager';
 import './MainView.css';
 
 const MainView = ({
-  heartClass, pressionBottomClass, handleSection, sices, t,
+  heartClass,
+  handleSection,
+  pressionBottomClass,
+  scissors,
+  t,
 }) => (
   <Row className="Main">
     <ImageManager
-      sices={sices}
+      scissors={scissors}
       t={t}
       heartClass={heartClass}
       pressionBottomClass={pressionBottomClass}
@@ -23,7 +27,7 @@ MainView.propTypes = {
   t: PropTypes.func.isRequired,
   heartClass: PropTypes.arrayOf(PropTypes.string).isRequired,
   pressionBottomClass: PropTypes.arrayOf(PropTypes.string).isRequired,
-  sices: PropTypes.arrayOf(PropTypes.string).isRequired,
+  scissors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default MainView;
