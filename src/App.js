@@ -25,6 +25,7 @@ export class App extends Component {
     switch (mode) {
       // show teacher view when in teacher mode
       case 'teacher':
+        // TODO::the teacher view is empty for the moment
         return <TeacherView />;
 
       // by default go with the student mode
