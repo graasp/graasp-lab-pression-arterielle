@@ -15,11 +15,11 @@ svg {
 
 #heart, #lung, #grouped-organs, #heart-head, #trach {
   cursor: pointer;
+  fill: #FF0000;
   fill-opacity: 0;
+  stroke: #FF0000;
   stroke-opacity: 0.2;
   vector-effect: "non-scaling-stroke";
-  fill: #FF0000;
-  stroke: #FF0000;
 }
 
 #heart {
@@ -28,13 +28,13 @@ svg {
 }
 
 #pressure-disable {
-  stroke: #004eff;
-  fill: transparent;
-  vector-effect: "non-scaling-stroke";
-  stroke-width: 5;
-  fill-opacity: 0.6;
-  stroke-opacity: 0.2;
   cursor: pointer;
+  fill: transparent;
+  fill-opacity: 0.6;
+  vector-effect: "non-scaling-stroke";
+  stroke: #004eff;
+  stroke-opacity: 0.2;
+  stroke-width: 5;
 }
 
 #grouped-organs, #cord {

@@ -13,7 +13,6 @@ class StudentView extends Component {
     super(props);
     this.state = {
       addClass: false,
-      intensity: 'moyen',
     };
     this.handleSection = this.handleSection.bind(this);
   }
@@ -26,7 +25,7 @@ class StudentView extends Component {
   };
 
   render() {
-    const { addClass, intensity } = this.state;
+    const { addClass } = this.state;
     const pressureBottomClass = ['pressure'];
     const scissors = ['scissors'];
     const heartClass = ['heart'];
@@ -49,7 +48,6 @@ class StudentView extends Component {
           pressureBottomClass={pressureBottomClass}
           scissors={scissors}
           heartClass={heartClass}
-          intensity={intensity}
           handleSection={this.handleSection}
           t={t}
         />
