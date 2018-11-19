@@ -25,7 +25,7 @@ const MainView = ({
 MainView.propTypes = {
   applySection: PropTypes.bool.isRequired,
   handleSection: PropTypes.func.isRequired,
-  heartBeat: PropTypes.arrayOf(PropTypes.string).isRequired,
+  heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
 };

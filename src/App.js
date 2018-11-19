@@ -14,13 +14,18 @@ export class App extends Component {
 
   constructor(props) {
     super(props);
-    const { mode = 'default' } = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+    const {
+      mode = 'default',
+      lang = 'en',
+    } = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+    const { i18n } = this.props;
+    i18n.changeLanguage(lang);
     this.state = { mode };
   }
 
   render() {
     const { mode } = this.state;
-    const { i18n, t } = this.props;
+    const { t } = this.props;
 
     switch (mode) {
       // show teacher view when in teacher mode
@@ -31,7 +36,7 @@ export class App extends Component {
       // by default go with the student mode
       case 'student':
       default:
-        return <StudentView t={t} changeLanguage={this.changeLanguage} i18n={i18n} />;
+        return <StudentView t={t} />;
     }
   }
 }

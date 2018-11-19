@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'reactstrap';
 import MainView from '../components/MainView';
 
 class StudentView extends Component {
   static propTypes = {
-    i18n: PropTypes.shape({}).isRequired,
     t: PropTypes.func.isRequired,
   }
 
@@ -39,16 +37,10 @@ class StudentView extends Component {
       pressure,
     } = this.state;
 
-    const { i18n, t } = this.props;
-    const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
-    };
+    const { t } = this.props;
 
     return (
-      <div className="App pt-5">
-        <Button onClick={() => changeLanguage('fr')} className="btn btn-outline-primary">Fr</Button>
-        <Button onClick={() => changeLanguage('en')} className="btn btn-outline-primary ml-2">En</Button>
-
+      <div className="App">
         <MainView
           pressure={pressure}
           applySection={applySection}
