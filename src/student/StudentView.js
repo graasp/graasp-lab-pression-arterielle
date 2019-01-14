@@ -1,22 +1,61 @@
-import React from 'react';
-import { Alert, Container } from 'reactstrap';
-import Logo from '../logo.svg';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
+import MainView from '../components/MainView';
 
-const StudentView = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={Logo} className="App-logo" alt="Logo" />
-      <h1 className="App-title">Welcome to the Graasp App Starter Kit</h1>
-    </header>
-    <Container className="App-body">
-      <Alert color="info">
-        This is the student view. Switch to the teacher view by clicking on the URL below.
-        <a href="?mode=teacher">
-          <pre>{`${window.location.host}/?mode=teacher`}</pre>
-        </a>
-      </Alert>
-    </Container>
-  </div>
-);
+class StudentView extends Component {
+  static propTypes = {
+    i18n: PropTypes.shape({}).isRequired,
+    t: PropTypes.func.isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      addClass: false,
+      intensity: 'moyen',
+    };
+    this.handleSection = this.handleSection.bind(this);
+  }
+
+  handleSection = () => {
+    const { addClass } = this.state;
+    this.setState({
+      addClass: !addClass,
+    });
+  };
+
+  render() {
+    const { addClass, intensity } = this.state;
+    const pressionBottomClass = ['pression'];
+    const sices = ['sices'];
+    const heartClass = ['heart'];
+    if (addClass) {
+      pressionBottomClass.push('pression-enable-nerf-bottom');
+      heartClass.push('heart-enable');
+      sices.push('sices-enable');
+    }
+    const { i18n, t } = this.props;
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
+
+    return (
+      <div className="App pt-5">
+        <Button onClick={() => changeLanguage('fr')} className="btn btn-outline-primary">Fr</Button>
+        <Button onClick={() => changeLanguage('en')} className="btn btn-outline-primary ml-2">En</Button>
+
+        <MainView
+          pressionBottomClass={pressionBottomClass}
+          sices={sices}
+          heartClass={heartClass}
+          intensity={intensity}
+          handleSection={this.handleSection}
+          t={t}
+        />
+      </div>
+    );
+  }
+}
 
 export default StudentView;
