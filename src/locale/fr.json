@@ -4,5 +4,9 @@
   "NerfSymp": "Nerf Sympathique",
   "NerfHer": "Nerf de Hering",
   "Bulbe": "Bulbe Rachidien",
-  "Sinus": "Sinus Carotidien"
+  "Sinus": "Sinus Carotidien",
+  "Description": "Description",
+  "SelectOrgane": "Sectionne le nerf sympathetique ou survole la souris sur un organe.",
+  "heartBeat": "Battement cardique actuel",
+  "LabDescription": "Le labo permet d’identifier les différents organes (moelle épinière, les nerfs et le sinus carotidien) intervenant dans le mécanisme nerveux de l’activité du cœur. L’influence de la section des différents nerfs et de leur stimulation sur le fonctionnement du cœur."
 }
