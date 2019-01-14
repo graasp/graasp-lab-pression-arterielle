@@ -1,12 +1,27 @@
-import { Col } from 'reactstrap';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const ImageManager = ({
-  heartBeat, pressure, handleSection, applySection, t,
+  heartBeat,
+  pressure,
+  handleSection,
+  applySection,
+  t,
+  handleCarotidHover,
+  handleHeringHover,
+  handleParaHover,
+  handleBulbHover,
+  handleCordHover,
+  handleSympaHover,
+  showCarotidNerve,
+  showHeringNerve,
+  showBulbNerve,
+  showParaNerve,
+  showCordNerve,
+  showSympaNerve,
 }) => (
-  <Col md={12}>
-    <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="702px" viewBox="0 0 1283 702" version="1.1">
+  <div className="Image-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="702px" viewBox="0 0 1083 702" version="1.1">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="y">
           <g id="regions" transform="translate(721.000000, 193.000000)" fill="#000000">
@@ -58,6 +73,8 @@ const ImageManager = ({
               cy="32.5"
               rx="10.5"
               ry="15.5"
+              onMouseEnter={handleCarotidHover}
+              onMouseLeave={handleCarotidHover}
             />
             <polygon
               id="Cord-tige"
@@ -71,10 +88,14 @@ const ImageManager = ({
               y="137"
               width="20"
               height="274"
+              onMouseEnter={handleCordHover}
+              onMouseLeave={handleCordHover}
             />
             <polygon
               id="Bulbe-node"
               points="73 78 91.0700738 101.147931 84.1679198 138.602069 61.8320802 138.602069 54.9299262 101.147931"
+              onMouseEnter={handleBulbHover}
+              onMouseLeave={handleBulbHover}
             />
             <path
               d="M13.144543,29.2260182 C23.464256,17.8265723 31.7043304,11.3244942 37.8647661,9.71978412 C41.3811017,8.8038263 56.7612146,-4.45065276 65.0110214,1.55550009 C68.1023554,3.80610115 70.3597135,9.27723304 71.7830957,17.9688958 L72.7830957,29.2260182 C72.260374,35.8867464 72.3232619,43.6673872 72.9717593,52.5679406 C73.2992944,57.0633221 73.4614021,63.092833 73.4580825,70.6564732 L73.4580723,70.6564732 C73.449798,89.508989 58.3079968,104.86296 39.4574212,105.133549 C39.4574212,105.133549 39.4574212,105.133549 39.4574212,105.133549 C29.7389556,105.273052 23.0817378,100.20279 18.7692877,97.3115778 C10.6911419,91.8957163 6.42292466,87.1620603 5.96463601,83.1106098 L5.96463763,83.1106096 C5.946703,82.9520604 5.90985943,82.7962271 5.85489277,82.6464334 C2.45681283,73.3860734 0.757772855,65.3633246 0.757772855,58.5781871 C0.757772855,51.7346074 4.88669622,41.9505511 13.144543,29.2260182 Z"
@@ -97,19 +118,25 @@ const ImageManager = ({
             />
           </g>
 
-          <g id="nerfs" transform="translate(367.000000, 164.000000)" stroke="#000000" strokeLinecap="square" strokeWidth="3">
+          <g id="nerfs" transform="translate(367.000000, 164.000000)" stroke="#000000" strokeLinecap="square">
             <path
               d="M0,354.5 C73.4614954,319.105827 123.945331,306.355821 151.451508,316.24998 C190.726221,330.377361 355.40199,369.360181 402.427182,369.827807 C405.337815,369.856751 402.427182,369.360181 411.717364,369.827807 C495.487829,374.044437 536.117961,330.935168 533.607759,240.5"
               id="Nerf-bottom"
               className={pressure ? 'pressure pressure-enable-nerf-bottom' : 'pressure'}
+              onMouseEnter={handleSympaHover}
+              onMouseLeave={handleSympaHover}
             />
             <path
               d="M6,144.667697 C78.3727655,167.882776 127.400481,173.703318 153.083145,162.129322 C210.598203,136.209931 237.427604,42.9124286 290.169964,30.4188092 C378.239534,9.55687407 449.571546,-0.418340872 504.166,0.493164386"
               id="Nerf-top"
+              onMouseEnter={handleHeringHover}
+              onMouseLeave={handleHeringHover}
             />
             <path
               d="M0,151 C55.6789905,172.110115 91.9312161,188.280617 108.756677,199.511509 C225.421418,277.384504 285.412144,327.511561 347.093554,336.112003 C403.507106,343.977931 449.967399,317.805424 475.346,247.00965 C480.927788,231.438777 485.756788,199.969584 489.833,152.602069"
               id="Nerf-mid"
+              onMouseEnter={handleParaHover}
+              onMouseLeave={handleParaHover}
             />
           </g>
           <g id="scissors" transform="translate(464.500000, 501.000000) scale(1, -1) translate(-464.500000, -501.000000) translate(437.000000, 466.000000)">
@@ -151,132 +178,159 @@ const ImageManager = ({
             />
           </g>
           <g id="differents-organes">
-            <g id="Sinus-carotidien" transform="translate(409.000000, 0.000000)">
-              <rect
-                id="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="206"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Sinus-Carotidien"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="23" y="31">{t('Sinus')}</tspan>
-              </text>
-            </g>
-            <g id="Nerf-parasympathique" transform="translate(492.000000, 653.000000)">
-              <rect
-                id="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="206"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Nerf-Sympathique"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="17" y="32">{t('NerfSymp')}</tspan>
-              </text>
-            </g>
-            <g id="Nerf-parasympathique" transform="translate(13.000000, 378.000000)">
-              <rect
-                id="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="260"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Nerf-Parasympathique"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="20" y="30">{t('NerfPara')}</tspan>
-              </text>
-            </g>
-            <g id="Nerf-hering" transform="translate(134.000000, 49.000000)">
-              <rect
-                id="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="170"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Nerf-de-Hering"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="13" y="30">{t('NerfHer')}</tspan>
-              </text>
-            </g>
-            <g id="Moelle-epienere" transform="translate(31.000000, 505.000000)">
-              <rect
-                d="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="206"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Moelle-épinière"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="23" y="31">{t('Moelle')}</tspan>
-              </text>
-            </g>
-            <g id="Bulbe-rachidien" transform="translate(0.000000, 165.000000)">
-              <rect
-                id="Rectangle"
-                stroke="#979797"
-                fill="#F9FF93"
-                x="0.5"
-                y="0.5"
-                width="206"
-                height="48"
-                rx="2"
-              />
-              <text
-                id="Bulbe-Rachidien"
-                fontFamily="Helvetica"
-                fontSize="22"
-                fontWeight="normal"
-                fill="#000000"
-              >
-                <tspan x="23" y="32">{t('Bulbe')}</tspan>
-              </text>
-            </g>
+            { showCarotidNerve
+              ? (
+                <g
+                  id="Sinus-carotidien"
+                  transform="translate(409.000000, 0.000000)"
+                >
+                  <rect
+                    id="Rectangle"
+                    stroke="#979797"
+                    fill="#F9FF93"
+                    x="0.5"
+                    y="0.5"
+                    width="206"
+                    height="48"
+                    rx="2"
+                  />
+                  <text
+                    id="Sinus-Carotidien"
+                    fontFamily="Helvetica"
+                    fontSize="22"
+                    fontWeight="normal"
+                    fill="#000000"
+                  >
+                    <tspan x="40" y="31">{t('Sinus')}</tspan>
+                  </text>
+                </g>
+              ) : (
+                ' '
+              )
+            }
+            { showSympaNerve ? (
+              <g id="Nerf-parasympathique" transform="translate(492.000000, 653.000000)">
+                <rect
+                  id="Rectangle"
+                  stroke="#979797"
+                  fill="#F9FF93"
+                  x="0.5"
+                  y="0.5"
+                  width="206"
+                  height="48"
+                  rx="2"
+                />
+                <text
+                  id="Nerf-Sympathique"
+                  fontFamily="Helvetica"
+                  fontSize="22"
+                  fontWeight="normal"
+                  fill="#000000"
+                >
+                  <tspan x="17" y="32">{t('NerfSymp')}</tspan>
+                </text>
+              </g>
+            ) : ''
+            }
+            { showParaNerve ? (
+              <g id="Nerf-parasympathique" transform="translate(13.000000, 378.000000)">
+                <rect
+                  id="Rectangle"
+                  stroke="#979797"
+                  fill="#F9FF93"
+                  x="0.5"
+                  y="0.5"
+                  width="260"
+                  height="48"
+                  rx="2"
+                />
+                <text
+                  id="Nerf-Parasympathique"
+                  fontFamily="Helvetica"
+                  fontSize="22"
+                  fontWeight="normal"
+                  fill="#000000"
+                >
+                  <tspan x="20" y="30">{t('NerfPara')}</tspan>
+                </text>
+              </g>
+            )
+              : ''
+            }
+            { showHeringNerve ? (
+              <g id="Nerf-hering" transform="translate(134.000000, 49.000000)">
+                <rect
+                  id="Rectangle"
+                  stroke="#979797"
+                  fill="#F9FF93"
+                  x="0.5"
+                  y="0.5"
+                  width="170"
+                  height="48"
+                  rx="2"
+                />
+                <text
+                  id="Nerf-de-Hering"
+                  fontFamily="Helvetica"
+                  fontSize="22"
+                  fontWeight="normal"
+                  fill="#000000"
+                >
+                  <tspan x="22" y="30">{t('NerfHer')}</tspan>
+                </text>
+              </g>
+            ) : (
+              ''
+            )
+            }
+            { showCordNerve ? (
+              <g id="Moelle-epienere" transform="translate(31.000000, 505.000000)">
+                <rect
+                  d="Rectangle"
+                  stroke="#979797"
+                  fill="#F9FF93"
+                  x="0.5"
+                  y="0.5"
+                  width="206"
+                  height="48"
+                  rx="2"
+                />
+                <text
+                  id="Moelle-épinière"
+                  fontFamily="Helvetica"
+                  fontSize="22"
+                  fontWeight="normal"
+                  fill="#000000"
+                >
+                  <tspan x="23" y="31">{t('Moelle')}</tspan>
+                </text>
+              </g>
+            ) : ''
+            }
+            { showBulbNerve ? (
+              <g id="Bulbe-rachidien" transform="translate(0.000000, 165.000000)">
+                <rect
+                  id="Rectangle"
+                  stroke="#979797"
+                  fill="#F9FF93"
+                  x="0.5"
+                  y="0.5"
+                  width="206"
+                  height="48"
+                  rx="2"
+                />
+                <text
+                  id="Bulbe-Rachidien"
+                  fontFamily="Helvetica"
+                  fontSize="22"
+                  fontWeight="normal"
+                  fill="#000000"
+                >
+                  <tspan x="23" y="32">{t('Bulbe')}</tspan>
+                </text>
+              </g>
+            ) : ''
+            }
           </g>
           <g
             id="fleches"
@@ -284,40 +338,73 @@ const ImageManager = ({
             stroke="#979797"
             strokeLinecap="square"
           >
-            <polyline
-              id="bulbe-rachidien"
-              points="0 180.833 80.6821428 230.196953 151.458132 273.5"
-            />
-            <path
-              d="M31,504 L141,481"
-              id="moelle-epiniere"
-            />
-            <path
-              d="M409,0 L662.5,122.618419"
-              id="sinus-carotid"
-            />
-            <path
-              d="M98,42.5 L396.5,206.5"
-              id="berf-hering"
-            />
-            <path
-              d="M396.5,622 L388.5,472.5"
-              id="nerf-sympathique"
-            />
-            <path
-              d="M67,369 L333.5,377"
-              id="nerf-parasympathique"
-            />
+            { showBulbNerve ? (
+              <polyline
+                id="bulbe-rachidien"
+                points="0 180.833 80.6821428 230.196953 151.458132 273.5"
+              />
+            ) : ''
+            }
+            { showCordNerve ? (
+              <path
+                d="M31,504 L141,481"
+                id="moelle-epiniere"
+              />
+            ) : ''
+            }
+            { showCarotidNerve ? (
+              <path
+                d="M409,0 L662.5,122.618419"
+                id="sinus-carotid"
+              />
+            )
+              : ''
+            }
+            { showHeringNerve ? (
+              <path
+                d="M98,42.5 L396.5,206.5"
+                id="berf-hering"
+              />
+            )
+              : ''
+            }
+            { showSympaNerve ? (
+              <path
+                d="M396.5,622 L388.5,472.5"
+                id="nerf-sympathique"
+              />
+            ) : ''
+            }
+            { showParaNerve ? (
+              <path
+                d="M67,369 L333.5,377"
+                id="nerf-parasympathique"
+              />
+            )
+              : ''
+            }
           </g>
         </g>
       </g>
     </svg>
-  </Col>
+  </div>
 );
 
 ImageManager.propTypes = {
   handleSection: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
+  handleCarotidHover: PropTypes.func.isRequired,
+  handleHeringHover: PropTypes.func.isRequired,
+  handleParaHover: PropTypes.func.isRequired,
+  handleBulbHover: PropTypes.func.isRequired,
+  handleCordHover: PropTypes.func.isRequired,
+  handleSympaHover: PropTypes.func.isRequired,
+  showCarotidNerve: PropTypes.bool.isRequired,
+  showHeringNerve: PropTypes.bool.isRequired,
+  showBulbNerve: PropTypes.bool.isRequired,
+  showParaNerve: PropTypes.bool.isRequired,
+  showCordNerve: PropTypes.bool.isRequired,
+  showSympaNerve: PropTypes.bool.isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
   applySection: PropTypes.bool.isRequired,
