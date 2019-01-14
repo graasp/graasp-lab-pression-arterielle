@@ -13,43 +13,43 @@ svg {
   overflow: inherit !important;
 }
 
-#organ_5, #organ_10, #organ_11, #organ_17, #organ_16 {
+#heart, #lung, #grouped-organs, #heart-head, #trach {
   cursor: pointer;
+  fill: #FF0000;
   fill-opacity: 0;
+  stroke: #FF0000;
   stroke-opacity: 0.2;
   vector-effect: "non-scaling-stroke";
-  fill: #FF0000;
-  stroke: #FF0000;
 }
 
-#organ_5 {
+#heart {
   animation: beat 1.3s infinite alternate;
   fill-opacity: 0.6;
 }
 
-#pression-disable {
-  stroke: #004eff;
-  fill: transparent;
-  vector-effect: "non-scaling-stroke";
-  stroke-width: 5;
-  fill-opacity: 0.6;
-  stroke-opacity: 0.2;
+#pressure-disable {
   cursor: pointer;
+  fill: transparent;
+  fill-opacity: 0.6;
+  vector-effect: "non-scaling-stroke";
+  stroke: #004eff;
+  stroke-opacity: 0.2;
+  stroke-width: 5;
 }
 
-#organ_11, #cord {
+#grouped-organs, #cord {
   cursor: pointer;
   fill: rgb(245 181 173);
   fill-opacity: 1;
 }
 
- #cord:hover, #organ_17:hover, #organ_5:hover, #organ_10:hover, #organ_11:hover, #organ_17:hover, #organ_16:hover {
+ #cord:hover, #heart-head:hover, #heart:hover, #lung:hover, #grouped-organs:hover, #heart-head:hover, #trach:hover {
   fill: #FF0000;
   fill-opacity: 0.8;
   stroke-opacity: 1;
 }
 
-#pression-disable:hover {
+#pressure-disable:hover {
   fill-opacity: 0.8;
   stroke-opacity: 1;
 }
@@ -60,7 +60,7 @@ svg {
   stroke-opacity: 1 !important;
 }
 
-.pression-enable-nerf-bottom {
+.pressure-enable-nerf-bottom {
   stroke: rgb(200, 159, 64) !important;
 }
 
@@ -118,6 +118,6 @@ svg {
   cursor: pointer;
 }
 
-.sices-enable {
+.scissors-enable {
   fill: rgb(103, 81, 32) !important;
 }
