@@ -1,3 +1,57 @@
-.Main {
-  padding-top: 40px;
+.lab-title {
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  background: #2196F5;
+  color: #fff;
+  font-size: 2rem;
+  text-align: left;
+}
+.Visualizer-container {
+  background-color: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  height: 100%;
+}
+.Main-container, .Main-container .Main {
+  height: 100%;
+}
+.observe-button, .test-button {
+  width: 50%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  font-size: 1.6rem;
+  color: #000;
+}
+.test-button, .test-button:hover {
+  border: 1px solid #dedede;
+  color: #dedede;
+  background-color: rgba(0,0,0,0);
+}
+.test-button-active, .observe-button-active {
+  background-color: #dedede;
+  font-weight: bold;
+}
+.test-button-active:hover,
+.observe-button-active:hover {
+  background-color: #EEEEEE;
+  COLOR: #555555;
+}
+#disabledBtn {
+  cursor: help;
+}
+.Description-container {
+  text-align: center;
+}
+.Description-container h2 {
+  margin: 2rem 0;
+}
+.Description-container p {
+  font-size: 1.4rem;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+.btn-outline-primary {
+  border-color: #0f94f8;
+  color: #555;
 }
