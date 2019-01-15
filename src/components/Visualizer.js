@@ -39,7 +39,12 @@ export class Visualizer extends Component {
   }
 
   render() {
-    const { obserViewActive, t } = this.props;
+    const {
+      obserViewActive,
+      t,
+      handleTitle,
+      showTitle,
+    } = this.props;
     const { openModal } = this.state;
     return (
       <div className="Visualizer-container">
@@ -49,6 +54,8 @@ export class Visualizer extends Component {
         />
         <Description
           t={t}
+          showTitle={showTitle}
+          handleTitle={handleTitle}
         />
         <SettingManager
           handleLang={this.handleLang}
@@ -69,6 +76,8 @@ Visualizer.propTypes = {
   dispatchDefaultLanguage: PropTypes.func.isRequired,
   dispatchThemeColor: PropTypes.func.isRequired,
   obserViewActive: PropTypes.bool.isRequired,
+  showTitle: PropTypes.bool.isRequired,
+  handleTitle: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
