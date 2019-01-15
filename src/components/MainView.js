@@ -26,14 +26,19 @@ const MainView = ({
   showCordNerve,
   showSympaNerve,
   showHeartNerve,
+  showTitle,
+  handleTitle,
   t,
 }) => (
   <div className="Main-container">
-    <Row>
-      <Col md={12}>
-        <h1 className="lab-title" style={{ backgroundColor: defaultColor }}>{t('Synchronization of the ovarian cycle')}</h1>
-      </Col>
-    </Row>
+    { showTitle ? (
+      <Row>
+        <Col md={12}>
+          <h1 className="lab-title" style={{ backgroundColor: defaultColor }}>{t('Synchronization of the ovarian cycle')}</h1>
+        </Col>
+      </Row>
+    ) : ''
+    }
     <Row className="Main">
       <Col sm="8">
         <ImageManager
@@ -63,6 +68,8 @@ const MainView = ({
           themeColor={defaultColor}
           t={t}
           obserViewActive={obserViewActive}
+          showTitle={showTitle}
+          handleTitle={handleTitle}
         />
       </Col>
     </Row>
@@ -91,6 +98,8 @@ MainView.propTypes = {
   handleCordHover: PropTypes.func.isRequired,
   handleSympaHover: PropTypes.func.isRequired,
   handleHeartHover: PropTypes.func.isRequired,
+  handleTitle: PropTypes.func.isRequired,
+  showTitle: PropTypes.bool.isRequired,
 };
 
 export default MainView;
