@@ -60,6 +60,13 @@ class StudentView extends Component {
     this.setState({ showHeartNerve: !showHeartNerve });
   }
 
+  handleTitle = () => {
+    const { showTitle } = this.state;
+    this.setState({
+      showTitle: !showTitle,
+    });
+  }
+
   render() {
     const {
       applySection,
@@ -73,6 +80,7 @@ class StudentView extends Component {
       showCordNerve,
       showSympaNerve,
       showHeartNerve,
+      showTitle,
     } = this.state;
 
     const { t, themeColor } = this.props;
@@ -96,6 +104,7 @@ class StudentView extends Component {
           handleCordHover={this.handleCordHover}
           handleSympaHover={this.handleSympaHover}
           handleHeartHover={this.handleHeartHover}
+          handleTitle={this.handleTitle}
           showCarotidNerve={showCarotidNerve}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
@@ -103,6 +112,7 @@ class StudentView extends Component {
           showCordNerve={showCordNerve}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
+          showTitle={showTitle}
         />
       </div>
     );
