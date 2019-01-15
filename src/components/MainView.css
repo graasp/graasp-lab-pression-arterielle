@@ -55,3 +55,12 @@
   border-color: #0f94f8;
   color: #555;
 }
+.modal-color-title, .modal-lang-title {
+  font-size: 1.1rem;
+}
+.modal-lang-title {
+  line-height: 2;
+}
+.modal-lang-container {
+  margin-top: 1rem;
+}
