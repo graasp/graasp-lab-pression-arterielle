@@ -117,7 +117,9 @@ svg {
 #Oval_1, #Oval_2, #Line, #Line-2 {
   cursor: pointer;
 }
-
+.scissors {
+  cursor: pointer;
+}
 .scissors-enable {
-  fill: rgb(103, 81, 32) !important;
+  fill: #F44336 !important;
 }
