@@ -14,12 +14,14 @@ const props = {
   handleBulbHover: jest.fn(),
   handleCordHover: jest.fn(),
   handleSympaHover: jest.fn(),
+  handleHeartHover: jest.fn(),
   showCarotidNerve: false,
   showHeringNerve: false,
   showBulbNerve: false,
   showParaNerve: false,
   showCordNerve: false,
   showSympaNerve: false,
+  showHeartNerve: false,
 };
 
 describe('render image manager component tests', () => {
