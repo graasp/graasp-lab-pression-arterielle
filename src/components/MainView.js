@@ -18,12 +18,14 @@ const MainView = ({
   handleBulbHover,
   handleCordHover,
   handleSympaHover,
+  handleHeartHover,
   showCarotidNerve,
   showHeringNerve,
   showBulbNerve,
   showParaNerve,
   showCordNerve,
   showSympaNerve,
+  showHeartNerve,
   t,
 }) => (
   <div className="Main-container">
@@ -46,12 +48,14 @@ const MainView = ({
           handleBulbHover={handleBulbHover}
           handleCordHover={handleCordHover}
           handleSympaHover={handleSympaHover}
+          handleHeartHover={handleHeartHover}
           showCarotidNerve={showCarotidNerve}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
           showParaNerve={showParaNerve}
           showCordNerve={showCordNerve}
           showSympaNerve={showSympaNerve}
+          showHeartNerve={showHeartNerve}
         />
       </Col>
       <Col sm="4">
@@ -78,6 +82,7 @@ MainView.propTypes = {
   showParaNerve: PropTypes.bool.isRequired,
   showCordNerve: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
+  showHeartNerve: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
   handleCarotidHover: PropTypes.func.isRequired,
   handleHeringHover: PropTypes.func.isRequired,
@@ -85,6 +90,7 @@ MainView.propTypes = {
   handleBulbHover: PropTypes.func.isRequired,
   handleCordHover: PropTypes.func.isRequired,
   handleSympaHover: PropTypes.func.isRequired,
+  handleHeartHover: PropTypes.func.isRequired,
 };
 
 export default MainView;
