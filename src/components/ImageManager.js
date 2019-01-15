@@ -13,12 +13,14 @@ const ImageManager = ({
   handleBulbHover,
   handleCordHover,
   handleSympaHover,
+  handleHeartHover,
   showCarotidNerve,
   showHeringNerve,
   showBulbNerve,
   showParaNerve,
   showCordNerve,
   showSympaNerve,
+  showHeartNerve,
 }) => (
   <div className="Image-container">
     <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="702px" viewBox="-50 -100 983 552" version="1.1">
@@ -30,6 +32,8 @@ const ImageManager = ({
               id="heart"
               fillRule="nonzero"
               className={heartBeat ? 'heart heart-enable' : 'heart'}
+              onMouseEnter={handleHeartHover}
+              onMouseLeave={handleHeartHover}
             />
             <path
               d="M185.471,139.46 C185.571,143.159 185.904,151.681 186.013,153.666 C182.5,151.167 167.501,136.166 164.834,131 C162.167,125.834 156.334,126 152.834,130 C149.334,134 133.03,151.226 121.849,154.28 C122.347,149.918 123.301,141.914 123.641,139.143 C130.587,139.719 145.667,120.833 147.667,109.166 C149.667,97.499 150.001,77.666 149.167,45.999 C153.5,42.666 156.167,39.166 165.167,47.832 C165.5,57.165 164.834,94.008 165.334,98.336 C165.834,102.664 169.941,122.421 185.471,139.46 Z"
@@ -179,7 +183,7 @@ const ImageManager = ({
               )
             }
             { showSympaNerve ? (
-              <g id="Nerf-parasympathique" transform="translate(492.000000, 653.000000)">
+              <g id="Nerf-sympathique" transform="translate(492.000000, 653.000000)">
                 <rect
                   id="Rectangle"
                   stroke="#979797"
@@ -199,6 +203,23 @@ const ImageManager = ({
                 >
                   <tspan x="12" y="32">{t('NerfSymp')}</tspan>
                 </text>
+              </g>
+            ) : ''
+            }
+            { showHeartNerve ? (
+              <g id="Hear-name" transform="translate(978.000000, 589.000000)">
+                <rect id="Rectangle" stroke="#979797" fill="#F9FF93" x="0" y="0" width="95" height="40" rx="2" />
+                <g id="Heart-breathe" transform="translate(24.000000, 12.000000)" fill="#000000" fontFamily="Helvetica" fontSize="13" fontWeight="normal">
+                  <text
+                    id="Heart"
+                    fontFamily="Helvetica"
+                    fontSize="22"
+                    fontWeight="normal"
+                    fill="#000000"
+                  >
+                    <tspan x="-3" y="14">{t('Heart')}</tspan>
+                  </text>
+                </g>
               </g>
             ) : ''
             }
@@ -353,6 +374,14 @@ const ImageManager = ({
             )
               : ''
             }
+            { showHeartNerve ? (
+              <path
+                d="M700.013,372 L808.5,558"
+                id="heart-cord"
+                strokeLinecap="square"
+              />
+            ) : ''
+            }
           </g>
         </g>
       </g>
@@ -369,12 +398,14 @@ ImageManager.propTypes = {
   handleBulbHover: PropTypes.func.isRequired,
   handleCordHover: PropTypes.func.isRequired,
   handleSympaHover: PropTypes.func.isRequired,
+  handleHeartHover: PropTypes.func.isRequired,
   showCarotidNerve: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
   showBulbNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
   showCordNerve: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
+  showHeartNerve: PropTypes.bool.isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
   applySection: PropTypes.bool.isRequired,
