@@ -18,7 +18,7 @@ const ImageManager = ({
 );
 
 ImageManager.propTypes = {
-  obserViewActive: PropTypes.func.isRequired,
+  obserViewActive: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
 };
 
