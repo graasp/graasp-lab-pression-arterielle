@@ -21,7 +21,7 @@ const ImageManager = ({
   showSympaNerve,
 }) => (
   <div className="Image-container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="702px" viewBox="0 0 1083 702" version="1.1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="702px" viewBox="-50 -100 983 552" version="1.1">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="y">
           <g id="regions" transform="translate(721.000000, 193.000000)" fill="#000000">
@@ -139,40 +139,10 @@ const ImageManager = ({
               onMouseLeave={handleParaHover}
             />
           </g>
-          <g id="scissors" transform="translate(464.500000, 501.000000) scale(1, -1) translate(-464.500000, -501.000000) translate(437.000000, 466.000000)">
-            <ellipse
-              id="Oval_1"
-              fill="#555"
-              cx="6.5"
-              cy="11"
-              rx="6.5"
-              ry="11"
-              onClick={handleSection}
-              className={applySection ? 'scissors scissors-enable' : 'scissors'}
-            />
-            <ellipse
-              id="Oval_2"
-              fill="#555"
-              cx="48.5"
-              cy="13"
-              rx="6.5"
-              ry="11"
-              onClick={handleSection}
-              className={applySection ? 'scissors scissors-enable' : 'scissors'}
-            />
+          <g id="cut-solid" transform="translate(464.500000, 501.000000) scale(-1, 1) rotate(-115.000000) translate(-464.500000, -501.000000) translate(437.000000, 466.000000)" fill="#000000" fillRule="nonzero">
             <path
-              d="M11.1612903,4 L31,69.8263158"
-              id="Line"
-              stroke="#555"
-              strokeLinecap="square"
-              onClick={handleSection}
-              className={applySection ? 'scissors scissors-enable' : 'scissors'}
-            />
-            <path
-              d="M45.6761905,4.35 L12,66.825"
-              id="Line-2"
-              stroke="#555"
-              strokeLinecap="square"
+              d="M34.1370209,35 L54.5681617,8.9953125 C55.1439461,8.2625 55.1439461,7.075 54.5681617,6.34375 C50.5413535,1.21875 44.0112947,1.21875 39.9844865,6.34375 L25.8034922,24.39375 L22.7514662,20.509375 C23.2805987,18.803125 23.5715601,16.9453125 23.5715601,15 C23.5715601,6.715625 18.2949682,0 11.7857801,0 C5.27659195,0 1.74464592e-15,6.715625 1.74464592e-15,15 C1.74464592e-15,23.284375 5.27659195,30 11.7857801,30 C12.3431492,30 12.8894692,29.95 13.4259678,29.8546875 L17.4687359,35 L13.4259678,40.1453125 C12.8894692,40.05 12.3419216,40 11.7857801,40 C5.27659195,40 0,46.715625 0,55 C0,63.284375 5.27659195,70 11.7857801,70 C18.2949682,70 23.5715601,63.284375 23.5715601,55 C23.5715601,53.0546875 23.2805987,51.196875 22.7514662,49.490625 L25.8034922,45.60625 L39.9844865,63.65625 C44.0112947,68.78125 50.5413535,68.78125 54.5681617,63.65625 C55.1439461,62.925 55.1439461,61.7375 54.5681617,61.0046875 L34.1370209,35 Z M11.7857801,20 C9.62014297,20 7.8571867,17.75625 7.8571867,15 C7.8571867,12.24375 9.62014297,10 11.7857801,10 C13.9514171,10 15.7143734,12.24375 15.7143734,15 C15.7143734,17.75625 13.9514171,20 11.7857801,20 Z M11.7857801,60 C9.62014297,60 7.8571867,57.75625 7.8571867,55 C7.8571867,52.24375 9.62014297,50 11.7857801,50 C13.9514171,50 15.7143734,52.24375 15.7143734,55 C15.7143734,57.75625 13.9514171,60 11.7857801,60 Z"
+              id="Shape"
               onClick={handleSection}
               className={applySection ? 'scissors scissors-enable' : 'scissors'}
             />
@@ -227,7 +197,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="17" y="32">{t('NerfSymp')}</tspan>
+                  <tspan x="12" y="32">{t('NerfSymp')}</tspan>
                 </text>
               </g>
             ) : ''
@@ -251,7 +221,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="20" y="30">{t('NerfPara')}</tspan>
+                  <tspan x="20" y="32">{t('NerfPara')}</tspan>
                 </text>
               </g>
             )
@@ -302,7 +272,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="23" y="31">{t('Moelle')}</tspan>
+                  <tspan x="45" y="31">{t('Moelle')}</tspan>
                 </text>
               </g>
             ) : ''
@@ -326,7 +296,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="23" y="32">{t('Bulbe')}</tspan>
+                  <tspan x="45" y="32">{t('Bulbe')}</tspan>
                 </text>
               </g>
             ) : ''
