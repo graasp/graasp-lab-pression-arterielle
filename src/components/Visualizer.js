@@ -14,28 +14,32 @@ export class Visualizer extends Component {
     const newColor = color.hex;
     const {
       dispatchThemeColor,
+      postMessage,
     } = this.props;
     dispatchThemeColor({ newColor });
+    postMessage({ theme_color: newColor });
   }
 
   handleChangeLang = (lang) => {
     const newLang = lang.value;
     const {
       dispatchDefaultLanguage,
+      postMessage,
     } = this.props;
     dispatchDefaultLanguage({ newLang });
+    postMessage({ default_lang: newLang });
   }
 
   onOpenModal = () => {
-    this.setState({
-      openModal: true,
-    });
+    this.setState({ openModal: true });
+    const { postMessage } = this.props;
+    postMessage({ open_setting_modal: true });
   }
 
   onCloseModal = () => {
-    this.setState({
-      openModal: false,
-    });
+    this.setState({ openModal: false });
+    const { postMessage } = this.props;
+    postMessage({ open_setting_modal: false });
   }
 
   render() {
@@ -78,6 +82,7 @@ Visualizer.propTypes = {
   obserViewActive: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
   toggleTitle: PropTypes.func.isRequired,
+  postMessage: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -28,6 +28,7 @@ const MainView = ({
   showHeartNerve,
   showTitle,
   toggleTitle,
+  postMessage,
   t,
 }) => (
   <div className="Main-container">
@@ -70,6 +71,7 @@ const MainView = ({
           obserViewActive={obserViewActive}
           showTitle={showTitle}
           toggleTitle={toggleTitle}
+          postMessage={postMessage}
         />
       </Col>
     </Row>
@@ -100,6 +102,7 @@ MainView.propTypes = {
   handleHeartHover: PropTypes.func.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   showTitle: PropTypes.bool.isRequired,
+  postMessage: PropTypes.func.isRequired,
 };
 
 export default MainView;
