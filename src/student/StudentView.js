@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MainView from '../components/MainView';
+import { AppState } from '../config/AppState';
 
 class StudentView extends Component {
   static propTypes = {
@@ -9,13 +10,10 @@ class StudentView extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      applySection: false,
-      heartBeat: false,
-      pressure: false,
-    };
     this.handleSection = this.handleSection.bind(this);
   }
+
+  state = AppState;
 
   handleSection = () => {
     const {
@@ -30,14 +28,60 @@ class StudentView extends Component {
     });
   };
 
+  handleCarotidHover = () => {
+    const { showCarotidNerve } = this.state;
+    this.setState({ showCarotidNerve: !showCarotidNerve });
+  }
+
+  handleHeringHover = () => {
+    const { showHeringNerve } = this.state;
+    this.setState({ showHeringNerve: !showHeringNerve });
+  }
+
+  handleParaHover = () => {
+    const { showParaNerve } = this.state;
+    this.setState({ showParaNerve: !showParaNerve });
+  }
+
+  handleBulbHover = () => {
+    const { showBulbNerve } = this.state;
+    this.setState({ showBulbNerve: !showBulbNerve });
+  }
+
+  handleCordHover = () => {
+    const { showCordNerve } = this.state;
+    this.setState({ showCordNerve: !showCordNerve });
+  }
+
+  handleSympaHover = () => {
+    const { showSympaNerve } = this.state;
+    this.setState({ showSympaNerve: !showSympaNerve });
+  }
+
+  handleHeartHover = () => {
+    const { showHeartNerve } = this.state;
+    this.setState({ showHeartNerve: !showHeartNerve });
+  }
+
   render() {
     const {
       applySection,
       heartBeat,
       pressure,
+      themeColor,
+      obserViewActive,
+      showCarotidNerve,
+      showHeringNerve,
+      showBulbNerve,
+      showParaNerve,
+      showCordNerve,
+      showSympaNerve,
+      showHeartNerve,
     } = this.state;
 
     const { t } = this.props;
+
+    const defaultColor = themeColor || '#0f94f8';
 
     return (
       <div className="App">
@@ -47,6 +91,22 @@ class StudentView extends Component {
           heartBeat={heartBeat}
           handleSection={this.handleSection}
           t={t}
+          defaultColor={defaultColor}
+          obserViewActive={obserViewActive}
+          handleCarotidHover={this.handleCarotidHover}
+          handleHeringHover={this.handleHeringHover}
+          handleParaHover={this.handleParaHover}
+          handleBulbHover={this.handleBulbHover}
+          handleCordHover={this.handleCordHover}
+          handleSympaHover={this.handleSympaHover}
+          handleHeartHover={this.handleHeartHover}
+          showCarotidNerve={showCarotidNerve}
+          showHeringNerve={showHeringNerve}
+          showBulbNerve={showBulbNerve}
+          showParaNerve={showParaNerve}
+          showCordNerve={showCordNerve}
+          showSympaNerve={showSympaNerve}
+          showHeartNerve={showHeartNerve}
         />
       </div>
     );

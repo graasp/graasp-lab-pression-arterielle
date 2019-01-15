@@ -1,8 +1,7 @@
-.App {
-  text-align: center;
-  padding-top: 4rem;
+html, body, #root, #root>div, .app-loader {
+  height: 100%;
+  background-color: #fafafa;
 }
-
 .App-logo {
   animation: App-logo-spin infinite 1s linear alternate;
   height: 80px;
