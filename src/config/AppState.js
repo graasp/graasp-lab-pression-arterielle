@@ -11,6 +11,7 @@ export const AppState = {
   pressure: false,
   obserViewActive: true,
   openModal: false,
+  showTitle: true,
 };
 
 export default AppState;
