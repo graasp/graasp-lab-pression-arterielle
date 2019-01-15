@@ -5,6 +5,7 @@ export const AppState = {
   showBulbNerve: false,
   showCordNerve: false,
   showSympaNerve: false,
+  showHeartNerve: false,
   applySection: false,
   heartBeat: false,
   pressure: false,
