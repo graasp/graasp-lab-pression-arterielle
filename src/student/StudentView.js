@@ -60,7 +60,7 @@ class StudentView extends Component {
     this.setState({ showHeartNerve: !showHeartNerve });
   }
 
-  handleTitle = () => {
+  toggleTitle = () => {
     const { showTitle } = this.state;
     this.setState({
       showTitle: !showTitle,
@@ -104,7 +104,7 @@ class StudentView extends Component {
           handleCordHover={this.handleCordHover}
           handleSympaHover={this.handleSympaHover}
           handleHeartHover={this.handleHeartHover}
-          handleTitle={this.handleTitle}
+          toggleTitle={this.toggleTitle}
           showCarotidNerve={showCarotidNerve}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}

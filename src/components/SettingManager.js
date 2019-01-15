@@ -30,7 +30,7 @@ const SettingManager = ({
   openModal,
   onCloseModal,
   handleChangeComplete,
-  handleLang,
+  handleChangeLang,
 }) => {
   const defaultColor = themeColor || '#0f94f8';
   return (
@@ -50,7 +50,7 @@ const SettingManager = ({
           t={t}
         />
         <LangBox
-          handleLang={handleLang}
+          handleChangeLang={handleChangeLang}
           t={t}
         />
       </Modal>
@@ -61,7 +61,7 @@ const SettingManager = ({
 SettingManager.propTypes = {
   t: PropTypes.func.isRequired,
   themeColor: PropTypes.string.isRequired,
-  handleLang: PropTypes.func.isRequired,
+  handleChangeLang: PropTypes.func.isRequired,
   handleChangeComplete: PropTypes.func.isRequired,
   onCloseModal: PropTypes.func.isRequired,
   onOpenModal: PropTypes.func.isRequired,

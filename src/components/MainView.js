@@ -27,7 +27,7 @@ const MainView = ({
   showSympaNerve,
   showHeartNerve,
   showTitle,
-  handleTitle,
+  toggleTitle,
   t,
 }) => (
   <div className="Main-container">
@@ -40,7 +40,7 @@ const MainView = ({
     ) : ''
     }
     <Row className="Main">
-      <Col sm="8">
+      <Col sm={8}>
         <ImageManager
           applySection={applySection}
           t={t}
@@ -63,13 +63,13 @@ const MainView = ({
           showHeartNerve={showHeartNerve}
         />
       </Col>
-      <Col sm="4">
+      <Col sm={4}>
         <Visualizer
           themeColor={defaultColor}
           t={t}
           obserViewActive={obserViewActive}
           showTitle={showTitle}
-          handleTitle={handleTitle}
+          toggleTitle={toggleTitle}
         />
       </Col>
     </Row>
@@ -98,7 +98,7 @@ MainView.propTypes = {
   handleCordHover: PropTypes.func.isRequired,
   handleSympaHover: PropTypes.func.isRequired,
   handleHeartHover: PropTypes.func.isRequired,
-  handleTitle: PropTypes.func.isRequired,
+  toggleTitle: PropTypes.func.isRequired,
   showTitle: PropTypes.bool.isRequired,
 };
 

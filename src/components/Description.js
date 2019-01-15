@@ -11,7 +11,7 @@ import {
 const Description = ({
   t,
   themeColor,
-  handleTitle,
+  toggleTitle,
   showTitle,
 }) => (
   <div className="Description-container">
@@ -20,7 +20,7 @@ const Description = ({
       {t('LabDescription')}
     </p>
     <p>
-      {t('SelectOrgane')}
+      {t('SelectOrgan')}
     </p>
     <Button
       outline
@@ -37,7 +37,7 @@ const Description = ({
       </Col>
       <Col xs="4">
         <Switch
-          onChange={handleTitle}
+          onChange={toggleTitle}
           checked={showTitle}
           id="title-switch"
         />
@@ -49,7 +49,7 @@ const Description = ({
 Description.propTypes = {
   t: PropTypes.func.isRequired,
   themeColor: PropTypes.string.isRequired,
-  handleTitle: PropTypes.func.isRequired,
+  toggleTitle: PropTypes.func.isRequired,
   showTitle: PropTypes.bool.isRequired,
 };
 

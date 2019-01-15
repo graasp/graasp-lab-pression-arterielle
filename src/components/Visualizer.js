@@ -18,7 +18,7 @@ export class Visualizer extends Component {
     dispatchThemeColor({ newColor });
   }
 
-  handleLang = (lang) => {
+  handleChangeLang = (lang) => {
     const newLang = lang.value;
     const {
       dispatchDefaultLanguage,
@@ -42,7 +42,7 @@ export class Visualizer extends Component {
     const {
       obserViewActive,
       t,
-      handleTitle,
+      toggleTitle,
       showTitle,
     } = this.props;
     const { openModal } = this.state;
@@ -55,10 +55,10 @@ export class Visualizer extends Component {
         <Description
           t={t}
           showTitle={showTitle}
-          handleTitle={handleTitle}
+          toggleTitle={toggleTitle}
         />
         <SettingManager
-          handleLang={this.handleLang}
+          handleChangeLang={this.handleChangeLang}
           onOpenModal={this.onOpenModal}
           onCloseModal={this.onCloseModal}
           handleChangeComplete={this.handleChangeComplete}
@@ -77,7 +77,7 @@ Visualizer.propTypes = {
   dispatchThemeColor: PropTypes.func.isRequired,
   obserViewActive: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
-  handleTitle: PropTypes.func.isRequired,
+  toggleTitle: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

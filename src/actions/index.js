@@ -1,8 +1,8 @@
-import { THEME_COLOR, SET_LANGUAGE } from './types';
+import { SET_THEME_COLOR, SET_LANGUAGE } from './types';
 
 export function themeColor({ newColor }) {
   return {
-    type: THEME_COLOR,
+    type: SET_THEME_COLOR,
     payload: newColor,
   };
 }
