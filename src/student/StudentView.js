@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import MainView from '../components/MainView';
 import { AppState } from '../config/AppState';
 
 class StudentView extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
-  }
-
-  constructor(props) {
-    super(props);
-    this.handleSection = this.handleSection.bind(this);
+    themeColor: PropTypes.string.isRequired,
   }
 
   state = AppState;
@@ -68,7 +65,6 @@ class StudentView extends Component {
       applySection,
       heartBeat,
       pressure,
-      themeColor,
       obserViewActive,
       showCarotidNerve,
       showHeringNerve,
@@ -79,7 +75,7 @@ class StudentView extends Component {
       showHeartNerve,
     } = this.state;
 
-    const { t } = this.props;
+    const { t, themeColor } = this.props;
 
     const defaultColor = themeColor || '#0f94f8';
 
@@ -113,4 +109,8 @@ class StudentView extends Component {
   }
 }
 
-export default StudentView;
+const mapStateToProps = state => ({
+  themeColor: state.setting.themeColor,
+});
+
+export default connect(mapStateToProps)(StudentView);
