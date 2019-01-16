@@ -1,48 +1,31 @@
-# Graasp App Starter: React Framework
+# Graasp Lab Arterial Pressure: React Framework
 
-This is a starter repository for a Graasp application. This particular flavor of the starter
-repository uses the React framework. It is an opinionated starter kit based on the `create-react-app`
-package. Other flavors are coming.
+The lab allows the learner to identify the different organs (spinal cord, nerves and carotid sinus) involved in the nervous mechanism of heart activity.
+The influence of the section of the different nerves and their stimulation on the functioning of the heart.
 
-## Getting Started
+## Topic
 
-Fork this repo.
+Biology
 
-## Request Credentials
 
-Currently, becoming a Graasp Developer and registering Graasp Apps is a manual process. Contact
-juancarlos.farah@epfl.ch or andre.nogueira@epfl.ch to receive a `GRAASP_DEVELOPER_ID`. Every time
-you want to release a new app, you will also have to request a `GRAASP_APP_ID`. This process is
-being automated, but it's currently still in the works.
+## Quick Start
 
-We will also give you AWS credentials, `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, which you
-will need to deploy your application to the Graasp ecosystem. These keys are private, so you should
-not share them with anyone.
-
-## Environment Variables
-
-Create a file in your project root named `.env` and add the following lines, replacing the values
-between `<>` with the keys you received.
+1- Clone this repository by downloading directly or running this command:
 
 ```
-GRAASP_DEVELOPER_ID=<YOUR_GRAASP_DEVELOPER_ID>
-GRAASP_APP_ID=<YOUR_GRAASP_APP_ID>
-AWS_ACCESS_KEY_ID=<YOUR_AWS_ACCESS_KEY_ID>
-AWS_SECRET_ACCESS_KEY=<YOUR_AWS_SECRET_ACCESS_KEY>
+git clone git@github.com:graasp/graasp-lab-arterial-pressure.git
 ```
 
-## Setup Development Environment
+2- Install dependencies by running `yarn` or `npm install` from the project directory to install all dependencies. In case your don't have them installed, go
+[here](https://changelog.com/posts/install-node-js-with-homebrew-on-os-x) and install them.
 
-Once you have set up your `.env` file, you need to run `./scripts/setup.sh` from the root folder in
-order to setup your credentials. This script will write the appropriate credentials to a
-`~/.aws/credentials` file that will allow you to deploy your application to the ecosystem.
+3- Navigate to the cloned or forked project directory using the command line, type `yarn start` or `npm start` and the project will automatically run on `localhost:3000`.
 
+## Get involved
 
-## Installing Dependencies
+Contact us at our Graasp React Group [here](http://http://graasp.eu/)
+Help us improve by creating [new issues](https://github.com/graasp/graasp-lab-arterial-pressure/issues/new.
 
-Make sure you have `node` and `yarn` installed on your local machine otherwise go
-[here](https://changelog.com/posts/install-node-js-with-homebrew-on-os-x) and install them; then run `yarn` from the project directory to install all dependencies.
+## Licence
 
-## Starting the Server
-
-Navigate to the cloned or forked project directory using the command line, type `npm start` and the project will automatically run on `localhost:3000`.
+See the [Licence](https://github.com/graasp/graasp-lab-arterial-pressure/blob/1/main-view/LICENSE)
