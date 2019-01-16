@@ -1,8 +1,8 @@
 {
   "Heart": "Heart",
   "Moelle": "Spinal cord",
-  "NerfPara": "Parasympathetic Nerve",
-  "NerfSymp": "Sympathetic Nerve",
+  "Para Sympathetic Nerve": "Parasympathetic Nerve",
+  "Sympathetic Nerve": "Sympathetic Nerve",
   "NerfHer": "Hering Nerve",
   "Bulbe": "Spinal Bulb",
   "Sinus": "Carotid sinus",
@@ -16,5 +16,12 @@
   "Display Lab title": "Display Lab title",
   "Synchronization of the ovarian cycle": "Synchronization of the ovarian cycle",
   "SelectOrgan": "Cut the sympathetic nerve or fly over the mouse on an organ.",
-  "LabDescription": "The lab helps identify different organs (spinal cord, nerve and carotid sinus) involved in the nervous mechanism of activity of the heart. The influence of the section of the different nerves and their stimulation on the functioning of the heart."
+  "LabDescription": "The lab helps identify different organs (spinal cord, nerve and carotid sinus) involved in the nervous mechanism of activity of the heart. The influence of the section of the different nerves and their stimulation on the functioning of the heart.",
+  "Heart Role Explanation": "It is the organ exposing the variation of the cardiac rate before or after section of a nerve.",
+  "Sympathetic Nerve Role Explanation": "Sympathetic nerves interfere in the mechanism of regulation of arterial pressure",
+  "Parasympathetic Notice": "The parasympathetic nerve is",
+  "Efferent": "efferent",
+  "Hypotensor": "hypotensor",
+  "Cardiomoderator": "cardiomoderator",
+  "End": "and"
 }

@@ -1,8 +1,8 @@
 {
   "Heart": "Coeur",
   "Moelle": "Moelle épinière",
-  "NerfPara": "Nerf Parasympathique",
-  "NerfSymp": "Nerf Sympathique",
+  "Para Sympathetic Nerve": "Nerf Parasympathique",
+  "Sympathetic Nerve": "Nerf Sympathique",
   "NerfHer": "Nerf de Hering",
   "Bulbe": "Bulbe Rachidien",
   "Sinus": "Sinus Carotidien",
@@ -16,5 +16,13 @@
   "Language": "Langue",
   "Display Lab title": "Afficher le titre du Lab",
   "Synchronization of the ovarian cycle": "Synchronisation du cycle ovarien",
-  "LabDescription": "Le labo permet d’identifier les différents organes (moelle épinière, les nerfs et le sinus carotidien) intervenant dans le mécanisme nerveux de l’activité du cœur. L’influence de la section des différents nerfs et de leur stimulation sur le fonctionnement du cœur."
+  "LabDescription": "Le labo permet d’identifier les différents organes (moelle épinière, les nerfs et le sinus carotidien) intervenant dans le mécanisme nerveux de l’activité du cœur. L’influence de la section des différents nerfs et de leur stimulation sur le fonctionnement du cœur.",
+  "Heart Role Explanation": "C'est lorgane exposant la variation du rithme cardiaque avant ou après section d'un nerf.",
+  "Sympathetic Nerve Role Explanation": "Les nerfs symphatiques intervinnenent dans le mécanisme de la régulation de la pression artérielle",
+  "ParaSympathetic Nerve Role Explanation": "Les nerfs symphatiques intervinnenent dans le mécanisme de la régulation de la pression artérielle",
+  "Parasympathetic Notice": "Le nerf parasympathique est un nerf",
+  "Efferent": "efferent",
+  "Hypotensor": "hypotenseur",
+  "Cardiomoderator": "cardiomodérateur",
+  "End": "et"
 }
