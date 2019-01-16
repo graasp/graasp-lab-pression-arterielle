@@ -7,12 +7,16 @@ import {
   Col,
   Row,
 } from 'reactstrap';
+import Explanation from './Common/Explanation';
 
 const Description = ({
   t,
   themeColor,
   toggleTitle,
   showTitle,
+  showParaNerve,
+  showSympaNerve,
+  showHeartNerve,
 }) => (
   <div className="Description-container">
     <h2>{t('Description')}</h2>
@@ -43,6 +47,11 @@ const Description = ({
         />
       </Col>
     </Row>
+    <Explanation
+      showHeartNerve={showHeartNerve}
+      showParaNerve={showParaNerve}
+      showSympaNerve={showSympaNerve}
+    />
   </div>
 );
 
@@ -51,6 +60,9 @@ Description.propTypes = {
   themeColor: PropTypes.string.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   showTitle: PropTypes.bool.isRequired,
+  showHeartNerve: PropTypes.bool.isRequired,
+  showParaNerve: PropTypes.bool.isRequired,
+  showSympaNerve: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
-import ImageManager from './ImageManager';
-import Visualizer from './Visualizer';
+import ImageManager from '../Simulator/ImageManager';
+import Visualizer from '../Visualizer';
 import './MainView.css';
 
 const MainView = ({
@@ -22,8 +22,8 @@ const MainView = ({
   showCarotidNerve,
   showHeringNerve,
   showBulbNerve,
-  showParaNerve,
   showCordNerve,
+  showParaNerve,
   showSympaNerve,
   showHeartNerve,
   showTitle,
@@ -58,8 +58,8 @@ const MainView = ({
           showCarotidNerve={showCarotidNerve}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
-          showParaNerve={showParaNerve}
           showCordNerve={showCordNerve}
+          showParaNerve={showParaNerve}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
         />
@@ -72,6 +72,9 @@ const MainView = ({
           showTitle={showTitle}
           toggleTitle={toggleTitle}
           postMessage={postMessage}
+          showHeartNerve={showHeartNerve}
+          showParaNerve={showParaNerve}
+          showSympaNerve={showSympaNerve}
         />
       </Col>
     </Row>

@@ -5,8 +5,8 @@ import Modal from 'react-responsive-modal';
 import { withStyles } from '@material-ui/core/styles';
 import AddIcon from '@material-ui/icons/Settings';
 import Fab from '@material-ui/core/Fab';
-import LangBox from './LangBox';
-import SwitchBox from './SwitchBox';
+import LangBox from './Common/LangBox';
+import SwitchBox from './Common/SwitchBox';
 
 const styles = theme => ({
   button: {
