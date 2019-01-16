@@ -51,6 +51,8 @@ export class Visualizer extends Component {
       showParaNerve,
       showSympaNerve,
       showHeartNerve,
+      showCarotidSinus,
+      showHeringNerve,
     } = this.props;
     const { openModal } = this.state;
     return (
@@ -66,6 +68,8 @@ export class Visualizer extends Component {
           showHeartNerve={showHeartNerve}
           showParaNerve={showParaNerve}
           showSympaNerve={showSympaNerve}
+          showHeringNerve={showHeringNerve}
+          showCarotidSinus={showCarotidSinus}
         />
         <SettingManager
           handleChangeLang={this.handleChangeLang}
@@ -92,6 +96,8 @@ Visualizer.propTypes = {
   showHeartNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
+  showHeringNerve: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -19,10 +19,10 @@ const MainView = ({
   handleCordHover,
   handleSympaHover,
   handleHeartHover,
-  showCarotidNerve,
+  showCarotidSinus,
   showHeringNerve,
   showBulbNerve,
-  showCordNerve,
+  showSpinalCord,
   showParaNerve,
   showSympaNerve,
   showHeartNerve,
@@ -55,10 +55,10 @@ const MainView = ({
           handleCordHover={handleCordHover}
           handleSympaHover={handleSympaHover}
           handleHeartHover={handleHeartHover}
-          showCarotidNerve={showCarotidNerve}
+          showCarotidSinus={showCarotidSinus}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
-          showCordNerve={showCordNerve}
+          showSpinalCord={showSpinalCord}
           showParaNerve={showParaNerve}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
@@ -75,6 +75,10 @@ const MainView = ({
           showHeartNerve={showHeartNerve}
           showParaNerve={showParaNerve}
           showSympaNerve={showSympaNerve}
+          showSpinalCord={showSpinalCord}
+          showBulbNerve={showBulbNerve}
+          showHeringNerve={showHeringNerve}
+          showCarotidSinus={showCarotidSinus}
         />
       </Col>
     </Row>
@@ -88,13 +92,14 @@ MainView.propTypes = {
   handleSection: PropTypes.func.isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
-  showCarotidNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
   showBulbNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
-  showCordNerve: PropTypes.bool.isRequired,
+  showSpinalCord: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
   showHeartNerve: PropTypes.bool.isRequired,
+  showTitle: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
   handleCarotidHover: PropTypes.func.isRequired,
   handleHeringHover: PropTypes.func.isRequired,
@@ -104,7 +109,6 @@ MainView.propTypes = {
   handleSympaHover: PropTypes.func.isRequired,
   handleHeartHover: PropTypes.func.isRequired,
   toggleTitle: PropTypes.func.isRequired,
-  showTitle: PropTypes.bool.isRequired,
   postMessage: PropTypes.func.isRequired,
 };
 
