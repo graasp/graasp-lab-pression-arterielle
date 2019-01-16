@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import MainView from '../components/MainView';
+import MainView from '../components/Main/MainView';
 import { AppState } from '../config/AppState';
 
 class StudentView extends Component {
