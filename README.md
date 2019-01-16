@@ -3,6 +3,7 @@
 The lab allows the learner to identify the different organs (spinal cord, nerves and carotid sinus) involved in the nervous mechanism of heart activity.
 The influence of the section of the different nerves and their stimulation on the functioning of the heart.
 
+![image](https://github.com/graasp/graasp-lab-arterial-pressure/public/preview.png)
 ## Topic
 
 Biology
