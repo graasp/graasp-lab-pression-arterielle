@@ -1,6 +1,6 @@
 {
   "Heart": "Coeur",
-  "Moelle": "Moelle épinière",
+  "Spinal cord": "Moelle épinière",
   "Para Sympathetic Nerve": "Nerf Parasympathique",
   "Sympathetic Nerve": "Nerf Sympathique",
   "Hering Nerve": "Nerf de Hering",
@@ -8,7 +8,7 @@
   "Carotid Sinus": "Sinus Carotidien",
   "Description": "Description",
   "SelectOrgan": "Clicque sur le ciseaux pour sectionner le nerf sympathetique ou survole la souris sur un organe pour lire des détails.",
-  "heartBeat": "Battement cardique actuel",
+  "heart Beat": "Battement cardique actuel",
   "Observe": "Observer",
   "Test": "Tester",
   "Coming Soon!": "Bientôt disponible!",

@@ -33,7 +33,7 @@ const Description = ({
       color="primary"
       style={{ borderColor: themeColor }}
     >
-      {t('heartBeat')}
+      {t('heart Beat')}
       :
       57
     </Button>

@@ -303,7 +303,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="45" y="31">{t('Moelle')}</tspan>
+                  <tspan x="45" y="31">{t('Spinal cord')}</tspan>
                 </text>
               </g>
             ) : ''
