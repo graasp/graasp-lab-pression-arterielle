@@ -3,7 +3,7 @@
 The lab allows the learner to identify the different organs (spinal cord, nerves and carotid sinus) involved in the nervous mechanism of heart activity.
 The influence of the section of the different nerves and their stimulation on the functioning of the heart.
 
-![image](https://github.com/graasp/graasp-lab-arterial-pressure/public/preview.png)
+![image](https://github.com/graasp/graasp-lab-arterial-pressure/blob/25/update-readme/public/preview.png)
 ## Topic
 
 Biology
@@ -24,7 +24,7 @@ git clone git@github.com:graasp/graasp-lab-arterial-pressure.git
 
 ## Get involved
 
-Contact us at our Graasp React Group [here](http://http://graasp.eu/)
+Contact us at our Graasp React Group [here](http://graasp.eu/)
 Help us improve by creating [new issues](https://github.com/graasp/graasp-lab-arterial-pressure/issues/new.
 
 ## Licence
