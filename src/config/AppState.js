@@ -10,6 +10,8 @@ export const AppState = {
   heartBeat: false,
   pressure: false,
   obserViewActive: true,
+  openModal: false,
+  showTitle: true,
 };
 
 export default AppState;

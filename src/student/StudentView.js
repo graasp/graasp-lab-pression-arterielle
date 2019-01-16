@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import MainView from '../components/MainView';
 import { AppState } from '../config/AppState';
 
 class StudentView extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
-  }
-
-  constructor(props) {
-    super(props);
-    this.handleSection = this.handleSection.bind(this);
+    themeColor: PropTypes.string.isRequired,
   }
 
   state = AppState;
@@ -63,12 +60,18 @@ class StudentView extends Component {
     this.setState({ showHeartNerve: !showHeartNerve });
   }
 
+  toggleTitle = () => {
+    const { showTitle } = this.state;
+    this.setState({
+      showTitle: !showTitle,
+    });
+  }
+
   render() {
     const {
       applySection,
       heartBeat,
       pressure,
-      themeColor,
       obserViewActive,
       showCarotidNerve,
       showHeringNerve,
@@ -77,9 +80,10 @@ class StudentView extends Component {
       showCordNerve,
       showSympaNerve,
       showHeartNerve,
+      showTitle,
     } = this.state;
 
-    const { t } = this.props;
+    const { t, themeColor } = this.props;
 
     const defaultColor = themeColor || '#0f94f8';
 
@@ -100,6 +104,7 @@ class StudentView extends Component {
           handleCordHover={this.handleCordHover}
           handleSympaHover={this.handleSympaHover}
           handleHeartHover={this.handleHeartHover}
+          toggleTitle={this.toggleTitle}
           showCarotidNerve={showCarotidNerve}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
@@ -107,10 +112,15 @@ class StudentView extends Component {
           showCordNerve={showCordNerve}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
+          showTitle={showTitle}
         />
       </div>
     );
   }
 }
 
-export default StudentView;
+const mapStateToProps = state => ({
+  themeColor: state.setting.themeColor,
+});
+
+export default connect(mapStateToProps)(StudentView);
