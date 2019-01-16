@@ -15,11 +15,11 @@ const props = {
   handleCordHover: jest.fn(),
   handleSympaHover: jest.fn(),
   handleHeartHover: jest.fn(),
-  showCarotidNerve: false,
+  showCarotidSinus: false,
   showHeringNerve: false,
   showBulbNerve: false,
   showParaNerve: false,
-  showCordNerve: false,
+  showSpinalCord: false,
   showSympaNerve: false,
   showHeartNerve: false,
 };

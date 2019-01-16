@@ -1,9 +1,9 @@
 export const AppState = {
-  showCarotidNerve: false,
+  showCarotidSinus: false,
   showHeringNerve: false,
   showParaNerve: false,
   showBulbNerve: false,
-  showCordNerve: false,
+  showSpinalCord: false,
   showSympaNerve: false,
   showHeartNerve: false,
   applySection: false,

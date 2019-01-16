@@ -14,11 +14,11 @@ const ImageManager = ({
   handleCordHover,
   handleSympaHover,
   handleHeartHover,
-  showCarotidNerve,
+  showCarotidSinus,
   showHeringNerve,
   showBulbNerve,
   showParaNerve,
-  showCordNerve,
+  showSpinalCord,
   showSympaNerve,
   showHeartNerve,
 }) => (
@@ -162,7 +162,7 @@ const ImageManager = ({
             />
           </g>
           <g id="differents-organes">
-            { showCarotidNerve
+            { showCarotidSinus
               ? (
                 <g
                   id="Sinus-carotidien"
@@ -185,7 +185,7 @@ const ImageManager = ({
                     fontWeight="normal"
                     fill="#000000"
                   >
-                    <tspan x="40" y="31">{t('Sinus')}</tspan>
+                    <tspan x="40" y="31">{t('Carotid Sinus')}</tspan>
                   </text>
                 </g>
               ) : (
@@ -277,14 +277,14 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="22" y="30">{t('NerfHer')}</tspan>
+                  <tspan x="22" y="30">{t('Hering Nerve')}</tspan>
                 </text>
               </g>
             ) : (
               ''
             )
             }
-            { showCordNerve ? (
+            { showSpinalCord ? (
               <g id="Moelle-epienere" transform="translate(31.000000, 505.000000)">
                 <rect
                   d="Rectangle"
@@ -327,7 +327,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="45" y="32">{t('Bulbe')}</tspan>
+                  <tspan x="45" y="32">{t('Spinal Bulb')}</tspan>
                 </text>
               </g>
             ) : ''
@@ -346,14 +346,14 @@ const ImageManager = ({
               />
             ) : ''
             }
-            { showCordNerve ? (
+            { showSpinalCord ? (
               <path
                 d="M31,504 L141,481"
                 id="moelle-epiniere"
               />
             ) : ''
             }
-            { showCarotidNerve ? (
+            { showCarotidSinus ? (
               <path
                 d="M409,0 L662.5,122.618419"
                 id="sinus-carotid"
@@ -409,11 +409,11 @@ ImageManager.propTypes = {
   handleCordHover: PropTypes.func.isRequired,
   handleSympaHover: PropTypes.func.isRequired,
   handleHeartHover: PropTypes.func.isRequired,
-  showCarotidNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
   showBulbNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
-  showCordNerve: PropTypes.bool.isRequired,
+  showSpinalCord: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
   showHeartNerve: PropTypes.bool.isRequired,
   heartBeat: PropTypes.bool.isRequired,

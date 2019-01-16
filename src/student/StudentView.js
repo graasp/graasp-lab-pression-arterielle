@@ -31,11 +31,11 @@ class StudentView extends Component {
   };
 
   handleCarotidHover = () => {
-    const { showCarotidNerve } = this.state;
-    this.setState({ showCarotidNerve: !showCarotidNerve });
+    const { showCarotidSinus } = this.state;
+    this.setState({ showCarotidSinus: !showCarotidSinus });
     this.postMessage({
       organ_name: 'Carotid Nerve',
-      show_title: showCarotidNerve,
+      show_title: showCarotidSinus,
     });
   }
 
@@ -67,11 +67,11 @@ class StudentView extends Component {
   }
 
   handleCordHover = () => {
-    const { showCordNerve } = this.state;
-    this.setState({ showCordNerve: !showCordNerve });
+    const { showSpinalCord } = this.state;
+    this.setState({ showSpinalCord: !showSpinalCord });
     this.postMessage({
       organ_name: 'Spinal Cord',
-      show_title: showCordNerve,
+      show_title: showSpinalCord,
     });
   }
 
@@ -121,11 +121,11 @@ class StudentView extends Component {
       heartBeat,
       pressure,
       obserViewActive,
-      showCarotidNerve,
+      showCarotidSinus,
       showHeringNerve,
       showBulbNerve,
       showParaNerve,
-      showCordNerve,
+      showSpinalCord,
       showSympaNerve,
       showHeartNerve,
       showTitle,
@@ -153,11 +153,11 @@ class StudentView extends Component {
           handleSympaHover={this.handleSympaHover}
           handleHeartHover={this.handleHeartHover}
           toggleTitle={this.toggleTitle}
-          showCarotidNerve={showCarotidNerve}
+          showCarotidSinus={showCarotidSinus}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
           showParaNerve={showParaNerve}
-          showCordNerve={showCordNerve}
+          showSpinalCord={showSpinalCord}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
           showTitle={showTitle}
