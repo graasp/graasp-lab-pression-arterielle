@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import TabComponent from './TabComponent';
-import Description from './Description';
-import SettingManager from './SettingManager';
+import TabComponent from './Content/TabComponent';
+import Description from './Content/Description';
+import SettingManager from './Content/SettingManager';
 import { AppState } from '../config/AppState';
 import { defaultLang, themeColor } from '../actions';
 
@@ -48,6 +48,9 @@ export class Visualizer extends Component {
       t,
       toggleTitle,
       showTitle,
+      showParaNerve,
+      showSympaNerve,
+      showHeartNerve,
     } = this.props;
     const { openModal } = this.state;
     return (
@@ -60,6 +63,9 @@ export class Visualizer extends Component {
           t={t}
           showTitle={showTitle}
           toggleTitle={toggleTitle}
+          showHeartNerve={showHeartNerve}
+          showParaNerve={showParaNerve}
+          showSympaNerve={showSympaNerve}
         />
         <SettingManager
           handleChangeLang={this.handleChangeLang}
@@ -83,6 +89,9 @@ Visualizer.propTypes = {
   showTitle: PropTypes.bool.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   postMessage: PropTypes.func.isRequired,
+  showHeartNerve: PropTypes.bool.isRequired,
+  showParaNerve: PropTypes.bool.isRequired,
+  showSympaNerve: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
