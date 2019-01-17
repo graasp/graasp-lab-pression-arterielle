@@ -35,7 +35,7 @@
 .test-button-active:hover,
 .observe-button-active:hover {
   background-color: #EEEEEE;
-  COLOR: #555555;
+  color: #555555;
 }
 #disabledBtn {
   cursor: help;
@@ -65,8 +65,16 @@
   margin-top: 1rem;
 }
 .display-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 0;
+  line-height: 1.8;
 }
 .title-switch {
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+.title-switch .col-8 {
+  padding-right: 0;
+}
+.Setting-container button {
+  outline: none;
 }
