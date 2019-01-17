@@ -35,7 +35,7 @@ const MainView = ({
     { showTitle ? (
       <Row>
         <Col md={12}>
-          <h1 className="lab-title" style={{ backgroundColor: defaultColor }}>{t('Synchronization of the ovarian cycle')}</h1>
+          <h1 className="lab-title" style={{ backgroundColor: defaultColor }}>{t('Regulation of arterial pressure')}</h1>
         </Col>
       </Row>
     ) : ''
