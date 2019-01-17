@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Qs from 'qs';
 import PropTypes from 'prop-types';
 import TabComponent from './Content/TabComponent';
 import Description from './Content/Description';
@@ -55,6 +56,9 @@ export class Visualizer extends Component {
       showHeringNerve,
     } = this.props;
     const { openModal } = this.state;
+    const {
+      mode = 'default',
+    } = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
     return (
       <div className="Visualizer-container">
         <TabComponent
@@ -63,23 +67,26 @@ export class Visualizer extends Component {
         />
         <Description
           t={t}
-          showTitle={showTitle}
-          toggleTitle={toggleTitle}
           showHeartNerve={showHeartNerve}
           showParaNerve={showParaNerve}
           showSympaNerve={showSympaNerve}
           showHeringNerve={showHeringNerve}
           showCarotidSinus={showCarotidSinus}
         />
-        <SettingManager
-          handleChangeLang={this.handleChangeLang}
-          onOpenModal={this.onOpenModal}
-          onCloseModal={this.onCloseModal}
-          handleChangeComplete={this.handleChangeComplete}
-          openModal={openModal}
-          themeColor={themeColor}
-          t={t}
-        />
+        { mode === 'default' ? (
+          <SettingManager
+            handleChangeLang={this.handleChangeLang}
+            onOpenModal={this.onOpenModal}
+            onCloseModal={this.onCloseModal}
+            handleChangeComplete={this.handleChangeComplete}
+            openModal={openModal}
+            themeColor={themeColor}
+            t={t}
+            showTitle={showTitle}
+            toggleTitle={toggleTitle}
+          />
+        ) : ''
+        }
       </div>
     );
   }
