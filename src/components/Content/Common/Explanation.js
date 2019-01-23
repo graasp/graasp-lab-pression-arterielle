@@ -9,6 +9,7 @@ const Explanation = ({
   showSympaNerve,
   showCarotidSinus,
   showHeringNerve,
+  applySection,
   t,
 }) => (
   <div className="control-container">
@@ -25,7 +26,7 @@ const Explanation = ({
       { showParaNerve ? (
         <div>
           <h2 className="explanation-title">{t('Para Sympathetic Nerve')}</h2>
-          <p>
+          <p className="first-explanation">
             {t('ParaSympathetic Nerve Role Explanation')}
           </p>
           <p>
@@ -42,7 +43,7 @@ const Explanation = ({
       { showSympaNerve ? (
         <div>
           <h2 className="explanation-title">{t('Sympathetic Nerve')}</h2>
-          <p>
+          <p className="first-explanation">
             {t('Sympathetic Nerve Role Explanation')}
           </p>
           <p>
@@ -74,6 +75,14 @@ const Explanation = ({
         </div>
       ) : ''
       }
+      { applySection ? (
+        <div className="explanation-content">
+          <p>
+            {t('Phase explanation')}
+          </p>
+        </div>
+      ) : ''
+      }
     </Col>
   </div>
 );
@@ -85,6 +94,7 @@ Explanation.propTypes = {
   showSympaNerve: PropTypes.bool.isRequired,
   showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
+  applySection: PropTypes.bool.isRequired,
 };
 
 export default withNamespaces('translations')(Explanation);
