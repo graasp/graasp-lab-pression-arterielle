@@ -79,6 +79,7 @@ const MainView = ({
           showBulbNerve={showBulbNerve}
           showHeringNerve={showHeringNerve}
           showCarotidSinus={showCarotidSinus}
+          applySection={applySection}
         />
       </Col>
     </Row>
