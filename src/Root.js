@@ -3,7 +3,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
-import i18nConfig from './i18n';
+import i18nConfig from './config/i18n';
 import App from './App';
 
 const Root = () => (
