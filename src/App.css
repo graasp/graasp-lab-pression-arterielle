@@ -26,6 +26,3 @@ html, body, #root, #root>div, .app-loader {
   from { transform: rotate(-30deg); }
   to { transform: rotate(30deg); }
 }
-.Image-container {
-  height: 70%;
-}
