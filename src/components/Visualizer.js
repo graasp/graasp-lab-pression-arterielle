@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import TabComponent from './Content/TabComponent';
 import Description from './Content/Description';
 import SettingManager from './Content/SettingManager';
+import i18n from '../config/i18n';
 import { AppState } from '../config/AppState';
 import { defaultLang, themeColor } from '../actions';
 
@@ -27,6 +28,7 @@ export class Visualizer extends Component {
       dispatchDefaultLanguage,
       postMessage,
     } = this.props;
+    i18n.changeLanguage(newLang);
     dispatchDefaultLanguage({ newLang });
     postMessage({ default_lang: newLang });
   }
@@ -54,6 +56,7 @@ export class Visualizer extends Component {
       showHeartNerve,
       showCarotidSinus,
       showHeringNerve,
+      applySection,
     } = this.props;
     const { openModal } = this.state;
     const {
@@ -72,6 +75,7 @@ export class Visualizer extends Component {
           showSympaNerve={showSympaNerve}
           showHeringNerve={showHeringNerve}
           showCarotidSinus={showCarotidSinus}
+          applySection={applySection}
         />
         { mode === 'default' ? (
           <SettingManager
@@ -105,6 +109,7 @@ Visualizer.propTypes = {
   showSympaNerve: PropTypes.bool.isRequired,
   showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
+  applySection: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

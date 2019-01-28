@@ -47,9 +47,7 @@
   margin: 2rem 0;
 }
 .Description-container p {
-  font-size: 1.4rem;
-  padding: 0 2rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
 .btn-outline-primary {
   border-color: #0f94f8;
@@ -77,4 +75,10 @@
 }
 .Setting-container button {
   outline: none;
+}
+.explanation-content {
+  padding-top: 2rem;
+}
+.first-explanation {
+  margin-bottom: 1rem;
 }

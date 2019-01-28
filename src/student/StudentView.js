@@ -132,7 +132,6 @@ class StudentView extends Component {
     } = this.state;
 
     const { t, themeColor } = this.props;
-
     const defaultColor = themeColor || '#0f94f8';
 
     return (

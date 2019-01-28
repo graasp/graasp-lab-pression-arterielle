@@ -2,8 +2,8 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 
-const en = require('./locale/en.json');
-const fr = require('./locale/fr.json');
+const en = require('../locale/en.json');
+const fr = require('../locale/fr.json');
 
 i18n.use(LanguageDetector).init({
   // we init with resources

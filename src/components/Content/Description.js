@@ -12,6 +12,7 @@ const Description = ({
   showHeartNerve,
   showCarotidSinus,
   showHeringNerve,
+  applySection,
 }) => (
   <div className="Description-container">
     <h2>{t('Description')}</h2>
@@ -36,6 +37,7 @@ const Description = ({
       showSympaNerve={showSympaNerve}
       showHeringNerve={showHeringNerve}
       showCarotidSinus={showCarotidSinus}
+      applySection={applySection}
     />
   </div>
 );
@@ -48,6 +50,7 @@ Description.propTypes = {
   showSympaNerve: PropTypes.bool.isRequired,
   showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
+  applySection: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
