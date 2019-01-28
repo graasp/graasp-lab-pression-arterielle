@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Button } from 'reactstrap';
 import Explanation from './Common/Explanation';
+import './Description.css';
 
 const Description = ({
   t,
-  themeColor,
   showParaNerve,
   showSympaNerve,
   showHeartNerve,
@@ -22,15 +21,6 @@ const Description = ({
     <p>
       {t('SelectOrgan')}
     </p>
-    <Button
-      outline
-      color="primary"
-      style={{ borderColor: themeColor }}
-    >
-      {t('heart Beat')}
-      :
-      57
-    </Button>
     <Explanation
       showHeartNerve={showHeartNerve}
       showParaNerve={showParaNerve}
@@ -44,7 +34,6 @@ const Description = ({
 
 Description.propTypes = {
   t: PropTypes.func.isRequired,
-  themeColor: PropTypes.string.isRequired,
   showHeartNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,

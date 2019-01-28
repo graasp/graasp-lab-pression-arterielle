@@ -13,7 +13,7 @@ const Explanation = ({
   t,
 }) => (
   <div className="control-container">
-    <Col xs={12}>
+    <Col xs={12} className="px-0">
       { showHeartNerve ? (
         <div>
           <h2 className="explanation-title">{t('Heart')}</h2>
@@ -32,9 +32,9 @@ const Explanation = ({
           <p>
             {t('Parasympathetic Notice')}&nbsp;
             <b>{t('Efferent')}</b>
-            &sbquo;&nbsp;
-            <b>{t('Hypotensor')}</b>&nbsp;
-            {t('End')}&nbsp;
+            &sbquo;
+            <b>{t('Hypotensor')}</b>
+            {t('And')}&nbsp;
             <b>{t('Cardiomoderator')}</b>
           </p>
         </div>
@@ -49,9 +49,9 @@ const Explanation = ({
           <p>
             {t('Sympathetic Notice')}&nbsp;
             <b>{t('Efferent')}</b>
-            &sbquo;&nbsp;
-            <b>{t('Hypertensor')}</b>&nbsp;
-            {t('End')}&nbsp;
+            &sbquo;
+            <b>{t('Hypertensor')}</b>
+            {t('And')}&nbsp;
             <b>{t('Cardiomoderator')}</b>
           </p>
         </div>

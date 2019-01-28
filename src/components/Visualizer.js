@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Qs from 'qs';
 import PropTypes from 'prop-types';
-import TabComponent from './Content/TabComponent';
 import Description from './Content/Description';
 import SettingManager from './Content/SettingManager';
 import i18n from '../config/i18n';
@@ -47,7 +46,6 @@ export class Visualizer extends Component {
 
   render() {
     const {
-      obserViewActive,
       t,
       toggleTitle,
       showTitle,
@@ -64,10 +62,6 @@ export class Visualizer extends Component {
     } = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
     return (
       <div className="Visualizer-container">
-        <TabComponent
-          obserViewActive={obserViewActive}
-          t={t}
-        />
         <Description
           t={t}
           showHeartNerve={showHeartNerve}
@@ -100,7 +94,6 @@ Visualizer.propTypes = {
   t: PropTypes.func.isRequired,
   dispatchDefaultLanguage: PropTypes.func.isRequired,
   dispatchThemeColor: PropTypes.func.isRequired,
-  obserViewActive: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   postMessage: PropTypes.func.isRequired,
@@ -115,6 +108,7 @@ Visualizer.propTypes = {
 const mapStateToProps = state => ({
   themeColor: state.setting.themeColor,
   defaultLang: state.setting.defaultLang,
+  showTitle: state.setting.showTitle,
 });
 
 const mapDispatchToProps = {

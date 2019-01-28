@@ -23,7 +23,7 @@ const ImageManager = ({
   showHeartNerve,
 }) => (
   <div className="Image-container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="842px" height="702px" viewBox="0 100 983 552" version="1.1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="285 131 758 562" version="1.1">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="y">
           <g id="regions" transform="translate(721.000000, 193.000000)" fill="#000000">

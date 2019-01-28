@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import MainView from '../components/Main/MainView';
+import SideMe from '../components/Main/SideMe';
 import { AppState } from '../config/AppState';
+import { titleState } from '../actions';
 
 class StudentView extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
     themeColor: PropTypes.string.isRequired,
+    dispatchTitleState: PropTypes.func.isRequired,
   }
 
   state = AppState;
@@ -95,9 +97,9 @@ class StudentView extends Component {
 
   toggleTitle = () => {
     const { showTitle } = this.state;
-    this.setState({
-      showTitle: !showTitle,
-    });
+    this.setState({ showTitle: !showTitle });
+    const { dispatchTitleState } = this.props;
+    dispatchTitleState({ showTitle });
     this.postMessage({
       show_title: showTitle,
     });
@@ -128,7 +130,6 @@ class StudentView extends Component {
       showSpinalCord,
       showSympaNerve,
       showHeartNerve,
-      showTitle,
     } = this.state;
 
     const { t, themeColor } = this.props;
@@ -136,7 +137,7 @@ class StudentView extends Component {
 
     return (
       <div className="App">
-        <MainView
+        <SideMe
           pressure={pressure}
           applySection={applySection}
           heartBeat={heartBeat}
@@ -159,7 +160,6 @@ class StudentView extends Component {
           showSpinalCord={showSpinalCord}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
-          showTitle={showTitle}
           postMessage={this.postMessage}
         />
       </div>
@@ -171,4 +171,10 @@ const mapStateToProps = state => ({
   themeColor: state.setting.themeColor,
 });
 
-export default connect(mapStateToProps)(StudentView);
+const mapDispatchToProps = {
+  dispatchTitleState: titleState,
+};
+
+const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(StudentView);
+
+export default (connectedComponent);
