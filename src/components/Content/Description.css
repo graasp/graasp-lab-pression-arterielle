@@ -11,3 +11,28 @@
   padding-left: 1rem;
   font-size: 1.3rem;
 }
+.Image-container {
+  height: 62%;
+  padding-top: 10rem;
+  padding-left: 2rem;
+}
+.modal-color-title, .modal-lang-title {
+  font-size: 1.1rem;
+}
+.modal-lang-title {
+  line-height: 2;
+}
+.modal-lang-container {
+  margin-top: 1rem;
+}
+.display-title {
+  font-size: 1rem;
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+.title-switch {
+  margin-top: .5rem;
+}
+.title-switch .col-8 {
+  padding-right: 0;
+}
