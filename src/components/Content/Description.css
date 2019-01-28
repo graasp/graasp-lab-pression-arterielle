@@ -1,0 +1,13 @@
+.Description-container p {
+  color: #555;
+  font-size: 1.1rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+.Description-container h2 {
+  color: #555;
+  margin: 1rem 0;
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Explanation from './Common/Explanation';
+import './Description.css';
 
 const Description = ({
   t,
