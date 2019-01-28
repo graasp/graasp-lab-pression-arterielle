@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withNamespaces } from 'react-i18next';
 import { Col, Row } from 'reactstrap';
 import Select from 'react-select';
-import { options } from '../config/options';
+import { options } from '../../../config/options';
 
 const LangBox = ({
   handleChangeLang,

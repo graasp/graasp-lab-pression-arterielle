@@ -1,18 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Switch from 'react-switch';
 import PropTypes from 'prop-types';
-import {
-  Button,
-  Col,
-  Row,
-} from 'reactstrap';
+import { Button } from 'reactstrap';
+import Explanation from './Common/Explanation';
 
 const Description = ({
   t,
   themeColor,
-  toggleTitle,
-  showTitle,
+  showParaNerve,
+  showSympaNerve,
+  showHeartNerve,
+  showCarotidSinus,
+  showHeringNerve,
 }) => (
   <div className="Description-container">
     <h2>{t('Description')}</h2>
@@ -27,30 +26,28 @@ const Description = ({
       color="primary"
       style={{ borderColor: themeColor }}
     >
-      {t('heartBeat')}
+      {t('heart Beat')}
       :
       57
     </Button>
-    <Row className="title-switch">
-      <Col xs="8">
-        <h5 className="display-title">{t('Display Lab title')}</h5>
-      </Col>
-      <Col xs="4">
-        <Switch
-          onChange={toggleTitle}
-          checked={showTitle}
-          id="title-switch"
-        />
-      </Col>
-    </Row>
+    <Explanation
+      showHeartNerve={showHeartNerve}
+      showParaNerve={showParaNerve}
+      showSympaNerve={showSympaNerve}
+      showHeringNerve={showHeringNerve}
+      showCarotidSinus={showCarotidSinus}
+    />
   </div>
 );
 
 Description.propTypes = {
   t: PropTypes.func.isRequired,
   themeColor: PropTypes.string.isRequired,
-  toggleTitle: PropTypes.func.isRequired,
-  showTitle: PropTypes.bool.isRequired,
+  showHeartNerve: PropTypes.bool.isRequired,
+  showParaNerve: PropTypes.bool.isRequired,
+  showSympaNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
+  showHeringNerve: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

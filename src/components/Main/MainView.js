@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
-import ImageManager from './ImageManager';
-import Visualizer from './Visualizer';
+import ImageManager from '../Simulator/ImageManager';
+import Visualizer from '../Visualizer';
 import './MainView.css';
 
 const MainView = ({
@@ -19,22 +19,23 @@ const MainView = ({
   handleCordHover,
   handleSympaHover,
   handleHeartHover,
-  showCarotidNerve,
+  showCarotidSinus,
   showHeringNerve,
   showBulbNerve,
+  showSpinalCord,
   showParaNerve,
-  showCordNerve,
   showSympaNerve,
   showHeartNerve,
   showTitle,
   toggleTitle,
+  postMessage,
   t,
 }) => (
   <div className="Main-container">
     { showTitle ? (
       <Row>
         <Col md={12}>
-          <h1 className="lab-title" style={{ backgroundColor: defaultColor }}>{t('Synchronization of the ovarian cycle')}</h1>
+          <h1 className="lab-title" style={{ backgroundColor: defaultColor }}>{t('Regulation of arterial pressure')}</h1>
         </Col>
       </Row>
     ) : ''
@@ -54,11 +55,11 @@ const MainView = ({
           handleCordHover={handleCordHover}
           handleSympaHover={handleSympaHover}
           handleHeartHover={handleHeartHover}
-          showCarotidNerve={showCarotidNerve}
+          showCarotidSinus={showCarotidSinus}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
+          showSpinalCord={showSpinalCord}
           showParaNerve={showParaNerve}
-          showCordNerve={showCordNerve}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
         />
@@ -70,6 +71,14 @@ const MainView = ({
           obserViewActive={obserViewActive}
           showTitle={showTitle}
           toggleTitle={toggleTitle}
+          postMessage={postMessage}
+          showHeartNerve={showHeartNerve}
+          showParaNerve={showParaNerve}
+          showSympaNerve={showSympaNerve}
+          showSpinalCord={showSpinalCord}
+          showBulbNerve={showBulbNerve}
+          showHeringNerve={showHeringNerve}
+          showCarotidSinus={showCarotidSinus}
         />
       </Col>
     </Row>
@@ -83,13 +92,14 @@ MainView.propTypes = {
   handleSection: PropTypes.func.isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
-  showCarotidNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
   showBulbNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
-  showCordNerve: PropTypes.bool.isRequired,
+  showSpinalCord: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
   showHeartNerve: PropTypes.bool.isRequired,
+  showTitle: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
   handleCarotidHover: PropTypes.func.isRequired,
   handleHeringHover: PropTypes.func.isRequired,
@@ -99,7 +109,7 @@ MainView.propTypes = {
   handleSympaHover: PropTypes.func.isRequired,
   handleHeartHover: PropTypes.func.isRequired,
   toggleTitle: PropTypes.func.isRequired,
-  showTitle: PropTypes.bool.isRequired,
+  postMessage: PropTypes.func.isRequired,
 };
 
 export default MainView;

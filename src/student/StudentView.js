@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import MainView from '../components/MainView';
+import MainView from '../components/Main/MainView';
 import { AppState } from '../config/AppState';
 
 class StudentView extends Component {
@@ -23,41 +23,74 @@ class StudentView extends Component {
       pressure: !pressure,
       heartBeat: !heartBeat,
     });
+    this.postMessage({
+      heart_beat: heartBeat,
+      breath_pressure: pressure,
+      cut_nerve: applySection,
+    });
   };
 
   handleCarotidHover = () => {
-    const { showCarotidNerve } = this.state;
-    this.setState({ showCarotidNerve: !showCarotidNerve });
+    const { showCarotidSinus } = this.state;
+    this.setState({ showCarotidSinus: !showCarotidSinus });
+    this.postMessage({
+      organ_name: 'Carotid Nerve',
+      show_title: showCarotidSinus,
+    });
   }
 
   handleHeringHover = () => {
     const { showHeringNerve } = this.state;
     this.setState({ showHeringNerve: !showHeringNerve });
+    this.postMessage({
+      organ_name: 'Hering Nerve',
+      show_title: showHeringNerve,
+    });
   }
 
   handleParaHover = () => {
     const { showParaNerve } = this.state;
     this.setState({ showParaNerve: !showParaNerve });
+    this.postMessage({
+      organ_name: 'Parasympathetic Nerve',
+      show_title: showParaNerve,
+    });
   }
 
   handleBulbHover = () => {
     const { showBulbNerve } = this.state;
     this.setState({ showBulbNerve: !showBulbNerve });
+    this.postMessage({
+      organ_name: 'Rachidien Bulb',
+      show_title: showBulbNerve,
+    });
   }
 
   handleCordHover = () => {
-    const { showCordNerve } = this.state;
-    this.setState({ showCordNerve: !showCordNerve });
+    const { showSpinalCord } = this.state;
+    this.setState({ showSpinalCord: !showSpinalCord });
+    this.postMessage({
+      organ_name: 'Spinal Cord',
+      show_title: showSpinalCord,
+    });
   }
 
   handleSympaHover = () => {
     const { showSympaNerve } = this.state;
     this.setState({ showSympaNerve: !showSympaNerve });
+    this.postMessage({
+      organ_name: 'Sympathetic Nerve',
+      show_title: showSympaNerve,
+    });
   }
 
   handleHeartHover = () => {
     const { showHeartNerve } = this.state;
     this.setState({ showHeartNerve: !showHeartNerve });
+    this.postMessage({
+      organ_name: 'Heart',
+      show_title: showHeartNerve,
+    });
   }
 
   toggleTitle = () => {
@@ -65,7 +98,22 @@ class StudentView extends Component {
     this.setState({
       showTitle: !showTitle,
     });
+    this.postMessage({
+      show_title: showTitle,
+    });
   }
+
+  postMessage = (data) => {
+    const message = JSON.stringify(data);
+    console.log('message', message);
+    if (document.postMessage) {
+      document.postMessage(message, '*');
+    } else if (window.postMessage) {
+      window.postMessage(message, '*');
+    } else {
+      console.error('unable to find postMessage');
+    }
+  };
 
   render() {
     const {
@@ -73,11 +121,11 @@ class StudentView extends Component {
       heartBeat,
       pressure,
       obserViewActive,
-      showCarotidNerve,
+      showCarotidSinus,
       showHeringNerve,
       showBulbNerve,
       showParaNerve,
-      showCordNerve,
+      showSpinalCord,
       showSympaNerve,
       showHeartNerve,
       showTitle,
@@ -105,14 +153,15 @@ class StudentView extends Component {
           handleSympaHover={this.handleSympaHover}
           handleHeartHover={this.handleHeartHover}
           toggleTitle={this.toggleTitle}
-          showCarotidNerve={showCarotidNerve}
+          showCarotidSinus={showCarotidSinus}
           showHeringNerve={showHeringNerve}
           showBulbNerve={showBulbNerve}
           showParaNerve={showParaNerve}
-          showCordNerve={showCordNerve}
+          showSpinalCord={showSpinalCord}
           showSympaNerve={showSympaNerve}
           showHeartNerve={showHeartNerve}
           showTitle={showTitle}
+          postMessage={this.postMessage}
         />
       </div>
     );

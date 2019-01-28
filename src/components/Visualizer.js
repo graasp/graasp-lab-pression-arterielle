@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Qs from 'qs';
 import PropTypes from 'prop-types';
-import TabComponent from './TabComponent';
-import Description from './Description';
-import SettingManager from './SettingManager';
+import TabComponent from './Content/TabComponent';
+import Description from './Content/Description';
+import SettingManager from './Content/SettingManager';
 import { AppState } from '../config/AppState';
 import { defaultLang, themeColor } from '../actions';
 
@@ -14,28 +15,32 @@ export class Visualizer extends Component {
     const newColor = color.hex;
     const {
       dispatchThemeColor,
+      postMessage,
     } = this.props;
     dispatchThemeColor({ newColor });
+    postMessage({ theme_color: newColor });
   }
 
   handleChangeLang = (lang) => {
     const newLang = lang.value;
     const {
       dispatchDefaultLanguage,
+      postMessage,
     } = this.props;
     dispatchDefaultLanguage({ newLang });
+    postMessage({ default_lang: newLang });
   }
 
   onOpenModal = () => {
-    this.setState({
-      openModal: true,
-    });
+    this.setState({ openModal: true });
+    const { postMessage } = this.props;
+    postMessage({ open_setting_modal: true });
   }
 
   onCloseModal = () => {
-    this.setState({
-      openModal: false,
-    });
+    this.setState({ openModal: false });
+    const { postMessage } = this.props;
+    postMessage({ open_setting_modal: false });
   }
 
   render() {
@@ -44,8 +49,16 @@ export class Visualizer extends Component {
       t,
       toggleTitle,
       showTitle,
+      showParaNerve,
+      showSympaNerve,
+      showHeartNerve,
+      showCarotidSinus,
+      showHeringNerve,
     } = this.props;
     const { openModal } = this.state;
+    const {
+      mode = 'default',
+    } = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
     return (
       <div className="Visualizer-container">
         <TabComponent
@@ -54,18 +67,26 @@ export class Visualizer extends Component {
         />
         <Description
           t={t}
-          showTitle={showTitle}
-          toggleTitle={toggleTitle}
+          showHeartNerve={showHeartNerve}
+          showParaNerve={showParaNerve}
+          showSympaNerve={showSympaNerve}
+          showHeringNerve={showHeringNerve}
+          showCarotidSinus={showCarotidSinus}
         />
-        <SettingManager
-          handleChangeLang={this.handleChangeLang}
-          onOpenModal={this.onOpenModal}
-          onCloseModal={this.onCloseModal}
-          handleChangeComplete={this.handleChangeComplete}
-          openModal={openModal}
-          themeColor={themeColor}
-          t={t}
-        />
+        { mode === 'default' ? (
+          <SettingManager
+            handleChangeLang={this.handleChangeLang}
+            onOpenModal={this.onOpenModal}
+            onCloseModal={this.onCloseModal}
+            handleChangeComplete={this.handleChangeComplete}
+            openModal={openModal}
+            themeColor={themeColor}
+            t={t}
+            showTitle={showTitle}
+            toggleTitle={toggleTitle}
+          />
+        ) : ''
+        }
       </div>
     );
   }
@@ -78,6 +99,12 @@ Visualizer.propTypes = {
   obserViewActive: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
   toggleTitle: PropTypes.func.isRequired,
+  postMessage: PropTypes.func.isRequired,
+  showHeartNerve: PropTypes.bool.isRequired,
+  showParaNerve: PropTypes.bool.isRequired,
+  showSympaNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
+  showHeringNerve: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

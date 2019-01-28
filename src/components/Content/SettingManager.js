@@ -5,8 +5,13 @@ import Modal from 'react-responsive-modal';
 import { withStyles } from '@material-ui/core/styles';
 import AddIcon from '@material-ui/icons/Settings';
 import Fab from '@material-ui/core/Fab';
-import LangBox from './LangBox';
-import SwitchBox from './SwitchBox';
+import Switch from 'react-switch';
+import {
+  Col,
+  Row,
+} from 'reactstrap';
+import LangBox from './Common/LangBox';
+import SwitchBox from './Common/SwitchBox';
 
 const styles = theme => ({
   button: {
@@ -25,6 +30,8 @@ const styles = theme => ({
 const SettingManager = ({
   t,
   classes,
+  toggleTitle,
+  showTitle,
   themeColor,
   onOpenModal,
   openModal,
@@ -34,7 +41,7 @@ const SettingManager = ({
 }) => {
   const defaultColor = themeColor || '#0f94f8';
   return (
-    <div className="SettingManager-container">
+    <div className="Setting-container">
       <Fab
         color="primary"
         aria-label="Add"
@@ -53,6 +60,18 @@ const SettingManager = ({
           handleChangeLang={handleChangeLang}
           t={t}
         />
+        <Row className="title-switch">
+          <Col xs={8}>
+            <h5 className="display-title">{t('Display Lab title')}</h5>
+          </Col>
+          <Col xs={4}>
+            <Switch
+              onChange={toggleTitle}
+              checked={showTitle}
+              id="title-switch"
+            />
+          </Col>
+        </Row>
       </Modal>
     </div>
   );
@@ -67,6 +86,8 @@ SettingManager.propTypes = {
   onOpenModal: PropTypes.func.isRequired,
   openModal: PropTypes.bool.isRequired,
   classes: PropTypes.shape({}).isRequired,
+  toggleTitle: PropTypes.func.isRequired,
+  showTitle: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({

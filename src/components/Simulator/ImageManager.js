@@ -14,16 +14,16 @@ const ImageManager = ({
   handleCordHover,
   handleSympaHover,
   handleHeartHover,
-  showCarotidNerve,
+  showCarotidSinus,
   showHeringNerve,
   showBulbNerve,
   showParaNerve,
-  showCordNerve,
+  showSpinalCord,
   showSympaNerve,
   showHeartNerve,
 }) => (
   <div className="Image-container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="942px" height="702px" viewBox="-50 -100 983 552" version="1.1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="842px" height="702px" viewBox="0 100 983 552" version="1.1">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="y">
           <g id="regions" transform="translate(721.000000, 193.000000)" fill="#000000">
@@ -123,13 +123,23 @@ const ImageManager = ({
           </g>
 
           <g id="nerfs" transform="translate(367.000000, 164.000000)" stroke="#000000" strokeLinecap="square">
-            <path
-              d="M0,354.5 C73.4614954,319.105827 123.945331,306.355821 151.451508,316.24998 C190.726221,330.377361 355.40199,369.360181 402.427182,369.827807 C405.337815,369.856751 402.427182,369.360181 411.717364,369.827807 C495.487829,374.044437 536.117961,330.935168 533.607759,240.5"
-              id="Nerf-bottom"
-              className={pressure ? 'pressure pressure-enable-nerf-bottom' : 'pressure'}
-              onMouseEnter={handleSympaHover}
-              onMouseLeave={handleSympaHover}
-            />
+            { pressure ? (
+              <path
+                d="M0,354.5 C58.3611069,326.381281 102.220033,312.554262 131.57678,313.01894 C139.172562,313.139171 145.797472,314.216185 151.451508,316.24998 C165.507964,321.306183 195.627428,329.546195 230.667286,338.064814 C293.531219,353.347807 372.23235,369.527545 402.427182,369.827807 C405.337815,369.856751 402.427182,369.360181 411.717364,369.827807 C495.487829,374.044437 536.117961,330.935168 533.607759,240.5"
+                id="Nerf-bottom-dashed"
+                strokeDasharray="10"
+              />
+            )
+              : (
+                <path
+                  d="M0,354.5 C73.4614954,319.105827 123.945331,306.355821 151.451508,316.24998 C190.726221,330.377361 355.40199,369.360181 402.427182,369.827807 C405.337815,369.856751 402.427182,369.360181 411.717364,369.827807 C495.487829,374.044437 536.117961,330.935168 533.607759,240.5"
+                  id="Nerf-bottom"
+                  className={pressure ? 'pressure pressure-enable-nerf-bottom' : 'pressure'}
+                  onMouseEnter={handleSympaHover}
+                  onMouseLeave={handleSympaHover}
+                />
+              )
+            }
             <path
               d="M6,144.667697 C78.3727655,167.882776 127.400481,173.703318 153.083145,162.129322 C210.598203,136.209931 237.427604,42.9124286 290.169964,30.4188092 C378.239534,9.55687407 449.571546,-0.418340872 504.166,0.493164386"
               id="Nerf-top"
@@ -152,7 +162,7 @@ const ImageManager = ({
             />
           </g>
           <g id="differents-organes">
-            { showCarotidNerve
+            { showCarotidSinus
               ? (
                 <g
                   id="Sinus-carotidien"
@@ -175,7 +185,7 @@ const ImageManager = ({
                     fontWeight="normal"
                     fill="#000000"
                   >
-                    <tspan x="40" y="31">{t('Sinus')}</tspan>
+                    <tspan x="40" y="31">{t('Carotid Sinus')}</tspan>
                   </text>
                 </g>
               ) : (
@@ -201,7 +211,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="12" y="32">{t('NerfSymp')}</tspan>
+                  <tspan x="12" y="32">{t('Sympathetic Nerve')}</tspan>
                 </text>
               </g>
             ) : ''
@@ -242,7 +252,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="20" y="32">{t('NerfPara')}</tspan>
+                  <tspan x="20" y="32">{t('Para Sympathetic Nerve')}</tspan>
                 </text>
               </g>
             )
@@ -267,14 +277,14 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="22" y="30">{t('NerfHer')}</tspan>
+                  <tspan x="22" y="30">{t('Hering Nerve')}</tspan>
                 </text>
               </g>
             ) : (
               ''
             )
             }
-            { showCordNerve ? (
+            { showSpinalCord ? (
               <g id="Moelle-epienere" transform="translate(31.000000, 505.000000)">
                 <rect
                   d="Rectangle"
@@ -293,7 +303,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="45" y="31">{t('Moelle')}</tspan>
+                  <tspan x="45" y="31">{t('Spinal cord')}</tspan>
                 </text>
               </g>
             ) : ''
@@ -317,7 +327,7 @@ const ImageManager = ({
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="45" y="32">{t('Bulbe')}</tspan>
+                  <tspan x="45" y="32">{t('Spinal Bulb')}</tspan>
                 </text>
               </g>
             ) : ''
@@ -336,14 +346,14 @@ const ImageManager = ({
               />
             ) : ''
             }
-            { showCordNerve ? (
+            { showSpinalCord ? (
               <path
                 d="M31,504 L141,481"
                 id="moelle-epiniere"
               />
             ) : ''
             }
-            { showCarotidNerve ? (
+            { showCarotidSinus ? (
               <path
                 d="M409,0 L662.5,122.618419"
                 id="sinus-carotid"
@@ -399,11 +409,11 @@ ImageManager.propTypes = {
   handleCordHover: PropTypes.func.isRequired,
   handleSympaHover: PropTypes.func.isRequired,
   handleHeartHover: PropTypes.func.isRequired,
-  showCarotidNerve: PropTypes.bool.isRequired,
+  showCarotidSinus: PropTypes.bool.isRequired,
   showHeringNerve: PropTypes.bool.isRequired,
   showBulbNerve: PropTypes.bool.isRequired,
   showParaNerve: PropTypes.bool.isRequired,
-  showCordNerve: PropTypes.bool.isRequired,
+  showSpinalCord: PropTypes.bool.isRequired,
   showSympaNerve: PropTypes.bool.isRequired,
   showHeartNerve: PropTypes.bool.isRequired,
   heartBeat: PropTypes.bool.isRequired,
