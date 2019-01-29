@@ -166,7 +166,7 @@ const ImageManager = ({
               ? (
                 <g
                   id="Sinus-carotidien"
-                  transform="translate(409.000000, 0.000000)"
+                  transform="translate(944.000000, 135.000000)"
                 >
                   <rect
                     id="Rectangle"
@@ -178,22 +178,25 @@ const ImageManager = ({
                     height="48"
                     rx="2"
                   />
-                  <text
+                  <g
                     id="Sinus-Carotidien"
+                    transform="translate(40.000000, 10.000000)"
+                    fill="#000000"
                     fontFamily="Helvetica"
                     fontSize="22"
                     fontWeight="normal"
-                    fill="#000000"
                   >
-                    <tspan x="40" y="31">{t('Carotid Sinus')}</tspan>
-                  </text>
+                    <text id="Carotid-Sinus">
+                      <tspan x="0" y="21">{t('Carotid Sinus')}</tspan>
+                    </text>
+                  </g>
                 </g>
               ) : (
                 ' '
               )
             }
             { showSympaNerve ? (
-              <g id="Nerf-sympathique" transform="translate(492.000000, 653.000000)">
+              <g id="Nerf-sympathique" transform="translate(492.000000, 590.000000)">
                 <rect
                   id="Rectangle"
                   stroke="#979797"
@@ -217,7 +220,7 @@ const ImageManager = ({
             ) : ''
             }
             { showHeartNerve ? (
-              <g id="Hear-name" transform="translate(978.000000, 589.000000)">
+              <g id="Hear-name" transform="translate(940.000000, 489.000000)">
                 <rect id="Rectangle" stroke="#979797" fill="#F9FF93" x="0" y="0" width="95" height="40" rx="2" />
                 <g id="Heart-breathe" transform="translate(24.000000, 12.000000)" fill="#000000" fontFamily="Helvetica" fontSize="13" fontWeight="normal">
                   <text
@@ -234,32 +237,35 @@ const ImageManager = ({
             ) : ''
             }
             { showParaNerve ? (
-              <g id="Nerf-parasympathique" transform="translate(13.000000, 378.000000)">
+              <g id="Nerf-parasympathique" transform="translate(513.000000, 300.000000)">
                 <rect
                   id="Rectangle"
                   stroke="#979797"
                   fill="#F9FF93"
                   x="0.5"
                   y="0.5"
-                  width="260"
-                  height="48"
+                  width="200"
+                  height="38"
                   rx="2"
                 />
                 <text
                   id="Nerf-Parasympathique"
                   fontFamily="Helvetica"
-                  fontSize="22"
+                  fontSize="16"
                   fontWeight="normal"
                   fill="#000000"
                 >
-                  <tspan x="20" y="32">{t('Para Sympathetic Nerve')}</tspan>
+                  <tspan x="20" y="25">{t('Para Sympathetic Nerve')}</tspan>
                 </text>
               </g>
             )
               : ''
             }
             { showHeringNerve ? (
-              <g id="Nerf-hering" transform="translate(134.000000, 49.000000)">
+              <g
+                id="Nerf-hering"
+                transform="translate(414.000000, 132.000000)"
+              >
                 <rect
                   id="Rectangle"
                   stroke="#979797"
@@ -270,22 +276,25 @@ const ImageManager = ({
                   height="48"
                   rx="2"
                 />
-                <text
+                <g
                   id="Nerf-de-Hering"
+                  transform="translate(22.000000, 9.000000)"
+                  fill="#000000"
                   fontFamily="Helvetica"
                   fontSize="22"
                   fontWeight="normal"
-                  fill="#000000"
                 >
-                  <tspan x="22" y="30">{t('Hering Nerve')}</tspan>
-                </text>
+                  <text id="Hering-Nerve">
+                    <tspan x="0" y="21">{t('Hering Nerve')}</tspan>
+                  </text>
+                </g>
               </g>
             ) : (
               ''
             )
             }
             { showSpinalCord ? (
-              <g id="Moelle-epienere" transform="translate(31.000000, 505.000000)">
+              <g id="Moelle-epienere" transform="translate(131.000000, 555.000000)">
                 <rect
                   d="Rectangle"
                   stroke="#979797"
@@ -309,7 +318,7 @@ const ImageManager = ({
             ) : ''
             }
             { showBulbNerve ? (
-              <g id="Bulbe-rachidien" transform="translate(0.000000, 165.000000)">
+              <g id="Bulbe-rachidien" transform="translate(100.000000, 365.000000)">
                 <rect
                   id="Rectangle"
                   stroke="#979797"
@@ -340,22 +349,22 @@ const ImageManager = ({
             strokeLinecap="square"
           >
             { showBulbNerve ? (
-              <polyline
+              <path
                 id="bulbe-rachidien"
-                points="0 180.833 80.6821428 230.196953 151.458132 273.5"
+                d="M31,334 L141,281"
               />
             ) : ''
             }
             { showSpinalCord ? (
               <path
-                d="M31,504 L141,481"
+                d="M31,524 L141,481"
                 id="moelle-epiniere"
               />
             ) : ''
             }
             { showCarotidSinus ? (
               <path
-                d="M409,0 L662.5,122.618419"
+                d="M736.5,111.5 L681.5,130.5"
                 id="sinus-carotid"
               />
             )
@@ -363,7 +372,7 @@ const ImageManager = ({
             }
             { showHeringNerve ? (
               <path
-                d="M98,42.5 L396.5,206.5"
+                d="M284.5,150.5 L284.5,296.5"
                 id="berf-hering"
               />
             )
@@ -371,14 +380,14 @@ const ImageManager = ({
             }
             { showSympaNerve ? (
               <path
-                d="M396.5,622 L388.5,472.5"
+                d="M396.5,560 L388.5,472.5"
                 id="nerf-sympathique"
               />
             ) : ''
             }
             { showParaNerve ? (
               <path
-                d="M67,369 L333.5,377"
+                d="M467,308 L340.5,377"
                 id="nerf-parasympathique"
               />
             )
@@ -386,7 +395,7 @@ const ImageManager = ({
             }
             { showHeartNerve ? (
               <path
-                d="M700.013,372 L808.5,558"
+                d="M700.013,372 L808.5,458"
                 id="heart-cord"
                 strokeLinecap="square"
               />
