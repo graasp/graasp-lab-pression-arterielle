@@ -12,9 +12,8 @@
   font-size: 1.3rem;
 }
 .Image-container {
-  height: 62%;
-  padding-top: 9%;
-  padding-left: 2rem;
+  padding-top: 5%;
+  text-align: center;
 }
 .modal-color-title, .modal-lang-title {
   font-size: 1.1rem;
