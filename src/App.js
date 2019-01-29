@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { withNamespaces } from 'react-i18next';
 import TeacherView from './teacher/TeacherView';
 import StudentView from './student/StudentView';
-import './App.css';
 
 export class App extends Component {
   static propTypes = {
