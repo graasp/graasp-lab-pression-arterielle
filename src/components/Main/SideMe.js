@@ -40,20 +40,6 @@ class PersistentDrawerRight extends React.Component {
       pressure,
       applySection,
       defaultColor,
-      handleCarotidHover,
-      handleHeringHover,
-      handleParaHover,
-      handleBulbHover,
-      handleCordHover,
-      handleSympaHover,
-      handleHeartHover,
-      showCarotidSinus,
-      showHeringNerve,
-      showBulbNerve,
-      showSpinalCord,
-      showParaNerve,
-      showSympaNerve,
-      showHeartNerve,
       showTitle,
       toggleTitle,
       postMessage,
@@ -118,20 +104,6 @@ class PersistentDrawerRight extends React.Component {
             heartBeat={heartBeat}
             pressure={pressure}
             handleSection={handleSection}
-            handleCarotidHover={handleCarotidHover}
-            handleHeringHover={handleHeringHover}
-            handleParaHover={handleParaHover}
-            handleBulbHover={handleBulbHover}
-            handleCordHover={handleCordHover}
-            handleSympaHover={handleSympaHover}
-            handleHeartHover={handleHeartHover}
-            showCarotidSinus={showCarotidSinus}
-            showHeringNerve={showHeringNerve}
-            showBulbNerve={showBulbNerve}
-            showSpinalCord={showSpinalCord}
-            showParaNerve={showParaNerve}
-            showSympaNerve={showSympaNerve}
-            showHeartNerve={showHeartNerve}
           />
         </main>
         <Drawer
@@ -155,13 +127,6 @@ class PersistentDrawerRight extends React.Component {
             t={t}
             toggleTitle={toggleTitle}
             postMessage={postMessage}
-            showHeartNerve={showHeartNerve}
-            showParaNerve={showParaNerve}
-            showSympaNerve={showSympaNerve}
-            showSpinalCord={showSpinalCord}
-            showBulbNerve={showBulbNerve}
-            showHeringNerve={showHeringNerve}
-            showCarotidSinus={showCarotidSinus}
             applySection={applySection}
           />
         </Drawer>
@@ -179,22 +144,8 @@ PersistentDrawerRight.propTypes = {
   handleSection: PropTypes.func.isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
-  showCarotidSinus: PropTypes.bool.isRequired,
-  showHeringNerve: PropTypes.bool.isRequired,
-  showBulbNerve: PropTypes.bool.isRequired,
-  showParaNerve: PropTypes.bool.isRequired,
-  showSpinalCord: PropTypes.bool.isRequired,
-  showSympaNerve: PropTypes.bool.isRequired,
-  showHeartNerve: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
-  handleCarotidHover: PropTypes.func.isRequired,
-  handleHeringHover: PropTypes.func.isRequired,
-  handleParaHover: PropTypes.func.isRequired,
-  handleBulbHover: PropTypes.func.isRequired,
-  handleCordHover: PropTypes.func.isRequired,
-  handleSympaHover: PropTypes.func.isRequired,
-  handleHeartHover: PropTypes.func.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   postMessage: PropTypes.func.isRequired,
 };

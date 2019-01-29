@@ -12,6 +12,13 @@ export const AppState = {
   obserViewActive: true,
   openModal: false,
   showTitle: true,
+  anchorEl: null,
+  anchorElHeart: null,
+  anchorElSympatetic: null,
+  anchorElParaSympa: null,
+  anchorElHering: null,
+  anchorElBulb: null,
+  anchorElSpinal: null,
 };
 
 export default AppState;

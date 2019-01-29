@@ -49,11 +49,6 @@ export class Visualizer extends Component {
       t,
       toggleTitle,
       showTitle,
-      showParaNerve,
-      showSympaNerve,
-      showHeartNerve,
-      showCarotidSinus,
-      showHeringNerve,
       applySection,
     } = this.props;
     const { openModal } = this.state;
@@ -64,11 +59,6 @@ export class Visualizer extends Component {
       <div className="Visualizer-container">
         <Description
           t={t}
-          showHeartNerve={showHeartNerve}
-          showParaNerve={showParaNerve}
-          showSympaNerve={showSympaNerve}
-          showHeringNerve={showHeringNerve}
-          showCarotidSinus={showCarotidSinus}
           applySection={applySection}
         />
         { mode === 'default' ? (
@@ -97,11 +87,6 @@ Visualizer.propTypes = {
   showTitle: PropTypes.bool.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   postMessage: PropTypes.func.isRequired,
-  showHeartNerve: PropTypes.bool.isRequired,
-  showParaNerve: PropTypes.bool.isRequired,
-  showSympaNerve: PropTypes.bool.isRequired,
-  showCarotidSinus: PropTypes.bool.isRequired,
-  showHeringNerve: PropTypes.bool.isRequired,
   applySection: PropTypes.bool.isRequired,
 };
 

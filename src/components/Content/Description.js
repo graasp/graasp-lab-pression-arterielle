@@ -6,11 +6,6 @@ import './Description.css';
 
 const Description = ({
   t,
-  showParaNerve,
-  showSympaNerve,
-  showHeartNerve,
-  showCarotidSinus,
-  showHeringNerve,
   applySection,
 }) => (
   <div className="Description-container">
@@ -22,11 +17,6 @@ const Description = ({
       {t('SelectOrgan')}
     </p>
     <Explanation
-      showHeartNerve={showHeartNerve}
-      showParaNerve={showParaNerve}
-      showSympaNerve={showSympaNerve}
-      showHeringNerve={showHeringNerve}
-      showCarotidSinus={showCarotidSinus}
       applySection={applySection}
     />
   </div>
@@ -34,11 +24,6 @@ const Description = ({
 
 Description.propTypes = {
   t: PropTypes.func.isRequired,
-  showHeartNerve: PropTypes.bool.isRequired,
-  showParaNerve: PropTypes.bool.isRequired,
-  showSympaNerve: PropTypes.bool.isRequired,
-  showCarotidSinus: PropTypes.bool.isRequired,
-  showHeringNerve: PropTypes.bool.isRequired,
   applySection: PropTypes.bool.isRequired,
 };
 
