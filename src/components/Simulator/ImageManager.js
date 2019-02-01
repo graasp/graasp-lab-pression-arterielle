@@ -7,7 +7,6 @@ import { AppState } from '../../config/AppState';
 const styles = theme => ({
   popover: {
     pointerEvents: 'none',
-    width: 900,
   },
   paper: {
     padding: theme.spacing.unit,
@@ -117,8 +116,8 @@ export class ImageManager extends Component {
           open={open}
           anchorEl={anchorEl}
           anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
+            vertical: 'top',
+            horizontal: 'left',
           }}
           transformOrigin={{
             vertical: 'top',
@@ -133,7 +132,9 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('Carotid Sinus Role Explanation')}
+            {t('Carotid Sinus Role Explanation One')}
+            <br />
+            {t('Carotid Sinus Role Explanation Two')}
           </h6>
         </Popover>
         <Popover
@@ -161,7 +162,11 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('Heart Role Explanation')}
+            {t('Heart Role Explanation One')}
+            <br />
+            {t('Heart Role Explanation Two')}
+            <br />
+            {t('Heart Role Explanation Three')}
           </h6>
         </Popover>
         <Popover
@@ -174,7 +179,7 @@ export class ImageManager extends Component {
           anchorEl={anchorElSympatetic}
           anchorOrigin={{
             vertical: 'bottom',
-            horizontal: 'right',
+            horizontal: 'middle',
           }}
           transformOrigin={{
             vertical: 'top',
@@ -189,7 +194,9 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('Sympathetic Nerve Role Explanation')}
+            {t('Sympathetic Nerve Role Explanation One')}
+            <br />
+            {t('Sympathetic Nerve Role Explanation Two')}
           </h6>
         </Popover>
         <Popover
@@ -201,8 +208,8 @@ export class ImageManager extends Component {
           open={openParaSympa}
           anchorEl={anchorElParaSympa}
           anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
+            vertical: 'top',
+            horizontal: 'left',
           }}
           transformOrigin={{
             vertical: 'top',
@@ -217,7 +224,9 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('ParaSympathetic Nerve Role Explanation')}
+            {t('ParaSympathetic Nerve Role Explanation One')}
+            <br />
+            {t('ParaSympathetic Nerve Role Explanation Two')}
           </h6>
         </Popover>
         <Popover
@@ -230,7 +239,7 @@ export class ImageManager extends Component {
           anchorEl={anchorElHering}
           anchorOrigin={{
             vertical: 'bottom',
-            horizontal: 'right',
+            horizontal: 'left',
           }}
           transformOrigin={{
             vertical: 'top',
@@ -245,7 +254,9 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('Hering Nerve Role Explanation')}
+            {t('Hering Nerve Role Explanation One')}
+            <br />
+            {t('Hering Nerve Role Explanation Two')}
           </h6>
         </Popover>
         <Popover
@@ -273,7 +284,9 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('Heart Role Explanation')}
+            {t('Spinal Bulb Role Explanation One')}
+            <br />
+            {t('Spinal Bulb Role Explanation Two')}
           </h6>
         </Popover>
         <Popover
@@ -301,7 +314,11 @@ export class ImageManager extends Component {
               :
             </b>
             <br />
-            {t('Spinal Cord Role Explanation')}
+            {t('Spinal Cord Role Explanation One')}
+            <br />
+            {t('Spinal Cord Role Explanation Two')}
+            <br />
+            {t('Spinal Cord Role Explanation Three')}
           </h6>
         </Popover>
         <svg xmlns="http://www.w3.org/2000/svg" width="60%" height="100%" viewBox="285 131 758 562" version="1.1">
