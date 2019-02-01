@@ -8,25 +8,25 @@ const props = {
   heartBeat: false,
   pressure: false,
   applySection: false,
-  handleCarotidHover: jest.fn(),
-  handleHeringHover: jest.fn(),
-  handleParaHover: jest.fn(),
-  handleBulbHover: jest.fn(),
-  handleCordHover: jest.fn(),
-  handleSympaHover: jest.fn(),
-  handleHeartHover: jest.fn(),
-  showCarotidSinus: false,
-  showHeringNerve: false,
-  showBulbNerve: false,
-  showParaNerve: false,
-  showSpinalCord: false,
-  showSympaNerve: false,
-  showHeartNerve: false,
+  handlePopoverOpen: jest.fn(),
+  handlePopoverClose: jest.fn(),
+  handleHeartPopoverOpen: jest.fn(),
+  handleHeartPopoverClose: jest.fn(),
+  handleSympateticPopoverOpen: jest.fn(),
+  handleSympateticPopoverClose: jest.fn(),
+  handleParaSympaPopoverOpen: jest.fn(),
+  handleParaSympaPopoverClose: jest.fn(),
+  handleHeringPopoverOpen: jest.fn(),
+  handleHeringPopoverClose: jest.fn(),
+  handleBulbPopoverOpen: jest.fn(),
+  handleBulbPopoverClose: jest.fn(),
+  handleSpinalPopoverOpen: jest.fn(),
+  handleSpinalPopoverClose: jest.fn(),
 };
 
 describe('render image manager component tests', () => {
   it('has one instance of image manager', () => {
-    const wrapped = shallow(<ImageManager {...props} />);
-    expect(wrapped.find('div').first().hasClass('Image-container'));
+    const component = shallow(<ImageManager {...props} />);
+    expect(component).toMatchSnapshot();
   });
 });
