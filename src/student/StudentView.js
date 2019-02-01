@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SideMe from '../components/Main/SideMe';
+import { toast } from 'react-toastify';
+import SideMenu from '../components/Main/SideMenu';
+import Flash from './Flash';
 import { AppState } from '../config/AppState';
 import { titleState } from '../actions';
 
@@ -30,6 +32,7 @@ class StudentView extends Component {
       breath_pressure: pressure,
       cut_nerve: applySection,
     });
+    this.notify();
   };
 
   toggleTitle = () => {
@@ -54,6 +57,8 @@ class StudentView extends Component {
     }
   };
 
+  notify = () => toast(<Flash />, { position: toast.POSITION.BOTTOM_LEFT });
+
   render() {
     const {
       applySection,
@@ -67,7 +72,7 @@ class StudentView extends Component {
 
     return (
       <div className="App">
-        <SideMe
+        <SideMenu
           pressure={pressure}
           applySection={applySection}
           heartBeat={heartBeat}
