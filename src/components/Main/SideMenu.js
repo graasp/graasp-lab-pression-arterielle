@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -20,7 +22,7 @@ import Styles from './Styles';
 
 const styles = Styles;
 
-class PersistentDrawerRight extends React.Component {
+class SideMenu extends React.Component {
   state = { open: false };
 
   handleDrawerOpen = () => {
@@ -40,20 +42,6 @@ class PersistentDrawerRight extends React.Component {
       pressure,
       applySection,
       defaultColor,
-      handleCarotidHover,
-      handleHeringHover,
-      handleParaHover,
-      handleBulbHover,
-      handleCordHover,
-      handleSympaHover,
-      handleHeartHover,
-      showCarotidSinus,
-      showHeringNerve,
-      showBulbNerve,
-      showSpinalCord,
-      showParaNerve,
-      showSympaNerve,
-      showHeartNerve,
       showTitle,
       toggleTitle,
       postMessage,
@@ -72,7 +60,7 @@ class PersistentDrawerRight extends React.Component {
               [classes.appBarShift]: open,
             })}
           >
-            <Toolbar disableGutters={!open} style={{ backgroundColor: themeColor }}>
+            <Toolbar disableGutters style={{ backgroundColor: themeColor }}>
               <IconButton
                 color="inherit"
                 aria-label="Open drawer"
@@ -107,7 +95,7 @@ class PersistentDrawerRight extends React.Component {
                 className={classes.fab}
                 style={{ backgroundColor: themeColor, outline: 'none' }}
               >
-                { open ? <MenuIcon style={{ color: 'white' }} /> : <ChevronRightIcon /> }
+                { open ? <ChevronRightIcon /> : <MenuIcon style={{ color: 'white' }} /> }
               </Fab>
             )
           }
@@ -118,21 +106,8 @@ class PersistentDrawerRight extends React.Component {
             heartBeat={heartBeat}
             pressure={pressure}
             handleSection={handleSection}
-            handleCarotidHover={handleCarotidHover}
-            handleHeringHover={handleHeringHover}
-            handleParaHover={handleParaHover}
-            handleBulbHover={handleBulbHover}
-            handleCordHover={handleCordHover}
-            handleSympaHover={handleSympaHover}
-            handleHeartHover={handleHeartHover}
-            showCarotidSinus={showCarotidSinus}
-            showHeringNerve={showHeringNerve}
-            showBulbNerve={showBulbNerve}
-            showSpinalCord={showSpinalCord}
-            showParaNerve={showParaNerve}
-            showSympaNerve={showSympaNerve}
-            showHeartNerve={showHeartNerve}
           />
+          { applySection ? <ToastContainer autoClose={false} /> : ''}
         </main>
         <Drawer
           className={classes.drawer}
@@ -155,13 +130,6 @@ class PersistentDrawerRight extends React.Component {
             t={t}
             toggleTitle={toggleTitle}
             postMessage={postMessage}
-            showHeartNerve={showHeartNerve}
-            showParaNerve={showParaNerve}
-            showSympaNerve={showSympaNerve}
-            showSpinalCord={showSpinalCord}
-            showBulbNerve={showBulbNerve}
-            showHeringNerve={showHeringNerve}
-            showCarotidSinus={showCarotidSinus}
             applySection={applySection}
           />
         </Drawer>
@@ -170,7 +138,7 @@ class PersistentDrawerRight extends React.Component {
   }
 }
 
-PersistentDrawerRight.propTypes = {
+SideMenu.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   theme: PropTypes.shape({}).isRequired,
   themeColor: PropTypes.string.isRequired,
@@ -179,22 +147,8 @@ PersistentDrawerRight.propTypes = {
   handleSection: PropTypes.func.isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
-  showCarotidSinus: PropTypes.bool.isRequired,
-  showHeringNerve: PropTypes.bool.isRequired,
-  showBulbNerve: PropTypes.bool.isRequired,
-  showParaNerve: PropTypes.bool.isRequired,
-  showSpinalCord: PropTypes.bool.isRequired,
-  showSympaNerve: PropTypes.bool.isRequired,
-  showHeartNerve: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
-  handleCarotidHover: PropTypes.func.isRequired,
-  handleHeringHover: PropTypes.func.isRequired,
-  handleParaHover: PropTypes.func.isRequired,
-  handleBulbHover: PropTypes.func.isRequired,
-  handleCordHover: PropTypes.func.isRequired,
-  handleSympaHover: PropTypes.func.isRequired,
-  handleHeartHover: PropTypes.func.isRequired,
   toggleTitle: PropTypes.func.isRequired,
   postMessage: PropTypes.func.isRequired,
 };
@@ -204,6 +158,6 @@ const mapStateToProps = state => ({
   showTitle: state.setting.showTitle,
 });
 
-const connectedComponent = connect(mapStateToProps)(PersistentDrawerRight);
+const connectedComponent = connect(mapStateToProps)(SideMenu);
 
 export default withStyles(styles, { withTheme: true })(connectedComponent);

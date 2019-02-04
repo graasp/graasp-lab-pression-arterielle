@@ -1,8 +1,8 @@
 {
-  "name": "graasp-app-starter-react",
+  "name": "graasp-lab-arterial-pressure",
   "version": "0.1.0",
   "private": true,
-  "author": "React EPFL",
+  "author": "Mashkour Abdel Aziz",
   "contributors": [
     "Juan Carlos Farah"
   ],
@@ -29,6 +29,7 @@
     "react-scripts": "1.1.5",
     "react-select": "2.2.0",
     "react-switch": "3.0.4",
+    "react-toastify": "4.5.2",
     "reactstrap": "6.4.0",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0"

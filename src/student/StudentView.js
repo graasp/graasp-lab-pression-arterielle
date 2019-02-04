@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SideMe from '../components/Main/SideMe';
+import { toast } from 'react-toastify';
+import SideMenu from '../components/Main/SideMenu';
+import Flash from './Flash';
 import { AppState } from '../config/AppState';
 import { titleState } from '../actions';
 
@@ -30,70 +32,8 @@ class StudentView extends Component {
       breath_pressure: pressure,
       cut_nerve: applySection,
     });
+    this.notify();
   };
-
-  handleCarotidHover = () => {
-    const { showCarotidSinus } = this.state;
-    this.setState({ showCarotidSinus: !showCarotidSinus });
-    this.postMessage({
-      organ_name: 'Carotid Nerve',
-      show_title: showCarotidSinus,
-    });
-  }
-
-  handleHeringHover = () => {
-    const { showHeringNerve } = this.state;
-    this.setState({ showHeringNerve: !showHeringNerve });
-    this.postMessage({
-      organ_name: 'Hering Nerve',
-      show_title: showHeringNerve,
-    });
-  }
-
-  handleParaHover = () => {
-    const { showParaNerve } = this.state;
-    this.setState({ showParaNerve: !showParaNerve });
-    this.postMessage({
-      organ_name: 'Parasympathetic Nerve',
-      show_title: showParaNerve,
-    });
-  }
-
-  handleBulbHover = () => {
-    const { showBulbNerve } = this.state;
-    this.setState({ showBulbNerve: !showBulbNerve });
-    this.postMessage({
-      organ_name: 'Rachidien Bulb',
-      show_title: showBulbNerve,
-    });
-  }
-
-  handleCordHover = () => {
-    const { showSpinalCord } = this.state;
-    this.setState({ showSpinalCord: !showSpinalCord });
-    this.postMessage({
-      organ_name: 'Spinal Cord',
-      show_title: showSpinalCord,
-    });
-  }
-
-  handleSympaHover = () => {
-    const { showSympaNerve } = this.state;
-    this.setState({ showSympaNerve: !showSympaNerve });
-    this.postMessage({
-      organ_name: 'Sympathetic Nerve',
-      show_title: showSympaNerve,
-    });
-  }
-
-  handleHeartHover = () => {
-    const { showHeartNerve } = this.state;
-    this.setState({ showHeartNerve: !showHeartNerve });
-    this.postMessage({
-      organ_name: 'Heart',
-      show_title: showHeartNerve,
-    });
-  }
 
   toggleTitle = () => {
     const { showTitle } = this.state;
@@ -117,19 +57,14 @@ class StudentView extends Component {
     }
   };
 
+  notify = () => toast(<Flash />, { position: toast.POSITION.BOTTOM_LEFT });
+
   render() {
     const {
       applySection,
       heartBeat,
       pressure,
       obserViewActive,
-      showCarotidSinus,
-      showHeringNerve,
-      showBulbNerve,
-      showParaNerve,
-      showSpinalCord,
-      showSympaNerve,
-      showHeartNerve,
     } = this.state;
 
     const { t, themeColor } = this.props;
@@ -137,7 +72,7 @@ class StudentView extends Component {
 
     return (
       <div className="App">
-        <SideMe
+        <SideMenu
           pressure={pressure}
           applySection={applySection}
           heartBeat={heartBeat}
@@ -145,21 +80,7 @@ class StudentView extends Component {
           t={t}
           defaultColor={defaultColor}
           obserViewActive={obserViewActive}
-          handleCarotidHover={this.handleCarotidHover}
-          handleHeringHover={this.handleHeringHover}
-          handleParaHover={this.handleParaHover}
-          handleBulbHover={this.handleBulbHover}
-          handleCordHover={this.handleCordHover}
-          handleSympaHover={this.handleSympaHover}
-          handleHeartHover={this.handleHeartHover}
           toggleTitle={this.toggleTitle}
-          showCarotidSinus={showCarotidSinus}
-          showHeringNerve={showHeringNerve}
-          showBulbNerve={showBulbNerve}
-          showParaNerve={showParaNerve}
-          showSpinalCord={showSpinalCord}
-          showSympaNerve={showSympaNerve}
-          showHeartNerve={showHeartNerve}
           postMessage={this.postMessage}
         />
       </div>
