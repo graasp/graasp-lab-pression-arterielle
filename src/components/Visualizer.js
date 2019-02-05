@@ -6,50 +6,51 @@ import Description from './Content/Description';
 import SettingManager from './Content/SettingManager';
 import i18n from '../config/i18n';
 import { AppState } from '../config/AppState';
-import { defaultLang, themeColor } from '../actions';
+import { changeThemeColor } from '../actions';
 
 export class Visualizer extends Component {
   state = AppState;
 
+  postMessage = (data) => {
+    const message = JSON.stringify(data);
+    console.log('message', message);
+    if (document.postMessage) {
+      document.postMessage(message, '*');
+    } else if (window.postMessage) {
+      window.postMessage(message, '*');
+    } else {
+      console.error('unable to find postMessage');
+    }
+  };
+
   handleChangeComplete = (color) => {
     const newColor = color.hex;
-    const {
-      dispatchThemeColor,
-      postMessage,
-    } = this.props;
+    const { dispatchThemeColor } = this.props;
     dispatchThemeColor({ newColor });
-    postMessage({ theme_color: newColor });
+    this.postMessage({ theme_color: newColor });
   }
 
   handleChangeLang = (lang) => {
     const newLang = lang.value;
-    const {
-      dispatchDefaultLanguage,
-      postMessage,
-    } = this.props;
     i18n.changeLanguage(newLang);
-    dispatchDefaultLanguage({ newLang });
-    postMessage({ default_lang: newLang });
+    this.postMessage({ default_lang: newLang });
   }
 
   onOpenModal = () => {
     this.setState({ openModal: true });
-    const { postMessage } = this.props;
-    postMessage({ open_setting_modal: true });
+    this.postMessage({ open_setting_modal: true });
   }
 
   onCloseModal = () => {
     this.setState({ openModal: false });
-    const { postMessage } = this.props;
-    postMessage({ open_setting_modal: false });
+    this.postMessage({ open_setting_modal: false });
   }
 
   render() {
     const {
       t,
-      toggleTitle,
-      showTitle,
-      applySection,
+      showHeader,
+      themeColor,
     } = this.props;
     const { openModal } = this.state;
     const {
@@ -59,7 +60,6 @@ export class Visualizer extends Component {
       <div className="Visualizer-container">
         <Description
           t={t}
-          applySection={applySection}
         />
         { mode === 'default' ? (
           <SettingManager
@@ -70,8 +70,7 @@ export class Visualizer extends Component {
             openModal={openModal}
             themeColor={themeColor}
             t={t}
-            showTitle={showTitle}
-            toggleTitle={toggleTitle}
+            showHeader={showHeader}
           />
         ) : ''
         }
@@ -82,23 +81,18 @@ export class Visualizer extends Component {
 
 Visualizer.propTypes = {
   t: PropTypes.func.isRequired,
-  dispatchDefaultLanguage: PropTypes.func.isRequired,
   dispatchThemeColor: PropTypes.func.isRequired,
-  showTitle: PropTypes.bool.isRequired,
-  toggleTitle: PropTypes.func.isRequired,
-  postMessage: PropTypes.func.isRequired,
-  applySection: PropTypes.bool.isRequired,
+  showHeader: PropTypes.bool.isRequired,
+  themeColor: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  themeColor: state.setting.themeColor,
-  defaultLang: state.setting.defaultLang,
-  showTitle: state.setting.showTitle,
+  themeColor: state.layout.themeColor,
+  showHeader: state.layout.showHeader,
 });
 
 const mapDispatchToProps = {
-  dispatchThemeColor: themeColor,
-  dispatchDefaultLanguage: defaultLang,
+  dispatchThemeColor: changeThemeColor,
 };
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Visualizer);
