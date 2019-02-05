@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import settings from './settings';
+import layoutReducer from './layout';
 
 export default combineReducers({
-  setting: settings,
+  layout: layoutReducer,
 });
