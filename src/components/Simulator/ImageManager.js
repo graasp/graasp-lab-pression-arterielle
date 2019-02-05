@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withNamespaces } from 'react-i18next';
+import { connect } from 'react-redux';
 import Popover from '@material-ui/core/Popover';
 import { withStyles } from '@material-ui/core/styles';
 import { AppState } from '../../config/AppState';
@@ -101,7 +103,7 @@ export class ImageManager extends Component {
       heartBeat,
       pressure,
       handleSection,
-      applySection,
+      showNerve,
       t,
     } = this.props;
 
@@ -470,7 +472,7 @@ export class ImageManager extends Component {
                   d="M34.1370209,35 L54.5681617,8.9953125 C55.1439461,8.2625 55.1439461,7.075 54.5681617,6.34375 C50.5413535,1.21875 44.0112947,1.21875 39.9844865,6.34375 L25.8034922,24.39375 L22.7514662,20.509375 C23.2805987,18.803125 23.5715601,16.9453125 23.5715601,15 C23.5715601,6.715625 18.2949682,0 11.7857801,0 C5.27659195,0 1.74464592e-15,6.715625 1.74464592e-15,15 C1.74464592e-15,23.284375 5.27659195,30 11.7857801,30 C12.3431492,30 12.8894692,29.95 13.4259678,29.8546875 L17.4687359,35 L13.4259678,40.1453125 C12.8894692,40.05 12.3419216,40 11.7857801,40 C5.27659195,40 0,46.715625 0,55 C0,63.284375 5.27659195,70 11.7857801,70 C18.2949682,70 23.5715601,63.284375 23.5715601,55 C23.5715601,53.0546875 23.2805987,51.196875 22.7514662,49.490625 L25.8034922,45.60625 L39.9844865,63.65625 C44.0112947,68.78125 50.5413535,68.78125 54.5681617,63.65625 C55.1439461,62.925 55.1439461,61.7375 54.5681617,61.0046875 L34.1370209,35 Z M11.7857801,20 C9.62014297,20 7.8571867,17.75625 7.8571867,15 C7.8571867,12.24375 9.62014297,10 11.7857801,10 C13.9514171,10 15.7143734,12.24375 15.7143734,15 C15.7143734,17.75625 13.9514171,20 11.7857801,20 Z M11.7857801,60 C9.62014297,60 7.8571867,57.75625 7.8571867,55 C7.8571867,52.24375 9.62014297,50 11.7857801,50 C13.9514171,50 15.7143734,52.24375 15.7143734,55 C15.7143734,57.75625 13.9514171,60 11.7857801,60 Z"
                   id="Shape"
                   onClick={handleSection}
-                  className={applySection ? 'scissors scissors-enable' : 'scissors'}
+                  className={showNerve ? 'scissors scissors-enable' : 'scissors'}
                 />
               </g>
             </g>
@@ -483,12 +485,19 @@ export class ImageManager extends Component {
 
 ImageManager.propTypes = {
   handleSection: PropTypes.func.isRequired,
-  t: PropTypes.func.isRequired,
   classes: PropTypes.shape({}).isRequired,
   heartBeat: PropTypes.bool.isRequired,
   pressure: PropTypes.bool.isRequired,
-  applySection: PropTypes.bool.isRequired,
+  showNerve: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = state => ({
+  showNerve: state.layout.showNerve,
+});
 
-export default withStyles(styles)(ImageManager);
+const ConnectedComponent = connect(mapStateToProps)(ImageManager);
+
+const StyledComponent = withStyles(styles)(ConnectedComponent);
+
+export default withNamespaces()(StyledComponent);
