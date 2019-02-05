@@ -22,6 +22,7 @@ const props = {
   handleBulbPopoverClose: jest.fn(),
   handleSpinalPopoverOpen: jest.fn(),
   handleSpinalPopoverClose: jest.fn(),
+  showNerve: false,
 };
 
 describe('render image manager component tests', () => {
