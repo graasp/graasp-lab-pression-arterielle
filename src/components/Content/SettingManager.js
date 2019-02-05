@@ -27,11 +27,16 @@ const styles = theme => ({
   },
 });
 
+const handleToggleHeader = showHeader => () => {
+  const { dispatchToggleHeader } = this.props;
+  dispatchToggleHeader(showHeader);
+  this.postMessage({ show_header: showHeader });
+};
+
 const SettingManager = ({
   t,
   classes,
-  toggleTitle,
-  showTitle,
+  showHeader,
   themeColor,
   onOpenModal,
   openModal,
@@ -66,8 +71,8 @@ const SettingManager = ({
           </Col>
           <Col xs={4}>
             <Switch
-              onChange={toggleTitle}
-              checked={showTitle}
+              onChange={handleToggleHeader}
+              checked={showHeader}
               id="title-switch"
             />
           </Col>
@@ -86,12 +91,11 @@ SettingManager.propTypes = {
   onOpenModal: PropTypes.func.isRequired,
   openModal: PropTypes.bool.isRequired,
   classes: PropTypes.shape({}).isRequired,
-  toggleTitle: PropTypes.func.isRequired,
-  showTitle: PropTypes.bool.isRequired,
+  showHeader: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
-  themeColor: state.setting.themeColor,
+  themeColor: state.layout.themeColor,
 });
 
 const connectedComponent = connect(mapStateToProps)(SettingManager);
