@@ -2,9 +2,10 @@
   "name": "graasp-lab-arterial-pressure",
   "version": "0.1.0",
   "private": true,
-  "author": "Mashkour Abdel Aziz",
+  "author": "React EPFL",
   "contributors": [
-    "Juan Carlos Farah"
+    "Juan Carlos Farah",
+    "Mashkour Abdel Aziz"
   ],
   "license": "MIT",
   "dependencies": {
