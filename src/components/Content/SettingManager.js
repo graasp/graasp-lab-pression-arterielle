@@ -103,6 +103,7 @@ export class SettingManager extends Component {
         </Fab>
         <Modal open={openModal} onClose={this.onCloseModal} center>
           <SwitchBox
+            themeColor={themeColor}
             handleChangeComplete={this.handleChangeComplete}
             t={t}
           />
