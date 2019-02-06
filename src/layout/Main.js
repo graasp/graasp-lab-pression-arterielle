@@ -26,23 +26,10 @@ class Main extends Component {
 
   notify = () => toast(<Flash />, { position: toast.POSITION.BOTTOM_LEFT });
 
-  handleSection = () => {
-    const {
-      applySection,
-      heartBeat,
-      pressure,
-    } = this.state;
-    this.setState({
-      applySection: !applySection,
-      pressure: !pressure,
-      heartBeat: !heartBeat,
-    });
+  handleToggleNerveSection = showNerve => () => {
+    const { dispatchToggleNerveSection } = this.props;
+    dispatchToggleNerveSection(showNerve);
     this.notify();
-  };
-
-  handleToggleNerve = showNerve => () => {
-    const { dispatchToggleNerve } = this.props;
-    dispatchToggleNerve(showNerve);
   }
 
   render() {
@@ -50,15 +37,9 @@ class Main extends Component {
       classes,
       showHeader,
       showSideMenu,
-      themeColor,
       showNerve,
+      themeColor,
     } = this.props;
-
-    const {
-      applySection,
-      heartBeat,
-      pressure,
-    } = this.state;
 
     return (
       <main
@@ -85,12 +66,10 @@ class Main extends Component {
         }
 
         <ImageManager
-          applySection={showNerve}
-          heartBeat={heartBeat}
-          pressure={pressure}
-          handleSection={this.handleToggleNerve(!showNerve)}
+          showNerve={showNerve}
+          handleToggleNerveSection={this.handleToggleNerveSection(!showNerve)}
         />
-        { applySection ? <ToastContainer autoClose={false} /> : ''}
+        { showNerve ? <ToastContainer autoClose={false} /> : ''}
       </main>
     );
   }
@@ -103,19 +82,19 @@ Main.propTypes = {
   showSideMenu: PropTypes.bool.isRequired,
   showNerve: PropTypes.bool.isRequired,
   dispatchToggleSideMenu: PropTypes.func.isRequired,
-  dispatchToggleNerve: PropTypes.func.isRequired,
+  dispatchToggleNerveSection: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   themeColor: state.layout.themeColor,
   showHeader: state.layout.showHeader,
   showSideMenu: state.layout.showSideMenu,
-  showNerve: state.layout.showSideMenu,
+  showNerve: state.layout.showNerve,
 });
 
 const mapDispatchToProps = {
   dispatchToggleSideMenu: toggleSideMenu,
-  dispatchToggleNerve: toggleNerve,
+  dispatchToggleNerveSection: toggleNerve,
 };
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Main);
