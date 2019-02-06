@@ -4,10 +4,7 @@ import ImageManager from './ImageManager';
 
 const props = {
   t: jest.fn(),
-  handleSection: jest.fn(),
-  heartBeat: false,
-  pressure: false,
-  applySection: false,
+  handleToggleNerveSection: jest.fn(),
   handlePopoverOpen: jest.fn(),
   handlePopoverClose: jest.fn(),
   handleHeartPopoverOpen: jest.fn(),
