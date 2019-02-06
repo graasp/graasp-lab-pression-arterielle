@@ -6,7 +6,6 @@ import {
 } from '../types';
 
 export const toggleSideMenu = showSideMenu => (dispatch) => {
-  console.log('showSideMenu', showSideMenu);
   dispatch({
     type: TOGGLE_SIDE_MENU,
     payload: showSideMenu,
