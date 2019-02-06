@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import Popover from '@material-ui/core/Popover';
 import { withStyles } from '@material-ui/core/styles';
@@ -496,4 +496,4 @@ const ConnectedComponent = connect(mapStateToProps)(ImageManager);
 
 const StyledComponent = withStyles(styles)(ConnectedComponent);
 
-export default withNamespaces()(StyledComponent);
+export default withTranslation()(StyledComponent);
