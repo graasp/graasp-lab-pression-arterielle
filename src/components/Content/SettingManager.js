@@ -43,44 +43,41 @@ const SettingManager = ({
   onCloseModal,
   handleChangeComplete,
   handleChangeLang,
-}) => {
-  const defaultColor = themeColor || '#0f94f8';
-  return (
-    <div className="Setting-container">
-      <Fab
-        color="primary"
-        aria-label="Add"
-        onClick={onOpenModal}
-        className={classes.fab}
-        style={{ backgroundColor: defaultColor }}
-      >
-        <AddIcon style={{ color: 'white' }} />
-      </Fab>
-      <Modal open={openModal} onClose={onCloseModal} center>
-        <SwitchBox
-          handleChangeComplete={handleChangeComplete}
-          t={t}
-        />
-        <LangBox
-          handleChangeLang={handleChangeLang}
-          t={t}
-        />
-        <Row className="title-switch">
-          <Col xs={8}>
-            <h5 className="display-title">{t('Display Lab title')}</h5>
-          </Col>
-          <Col xs={4}>
-            <Switch
-              onChange={handleToggleHeader}
-              checked={showHeader}
-              id="title-switch"
-            />
-          </Col>
-        </Row>
-      </Modal>
-    </div>
-  );
-};
+}) => (
+  <div className="Setting-container">
+    <Fab
+      color="primary"
+      aria-label="Add"
+      onClick={onOpenModal}
+      className={classes.fab}
+      style={{ backgroundColor: themeColor }}
+    >
+      <AddIcon style={{ color: 'white' }} />
+    </Fab>
+    <Modal open={openModal} onClose={onCloseModal} center>
+      <SwitchBox
+        handleChangeComplete={handleChangeComplete}
+        t={t}
+      />
+      <LangBox
+        handleChangeLang={handleChangeLang}
+        t={t}
+      />
+      <Row className="title-switch">
+        <Col xs={8}>
+          <h5 className="display-title">{t('Display Lab title')}</h5>
+        </Col>
+        <Col xs={4}>
+          <Switch
+            onChange={handleToggleHeader}
+            checked={showHeader}
+            id="title-switch"
+          />
+        </Col>
+      </Row>
+    </Modal>
+  </div>
+);
 
 SettingManager.propTypes = {
   t: PropTypes.func.isRequired,
