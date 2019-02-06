@@ -25,8 +25,8 @@ export class Visualizer extends Component {
 
   handleChangeComplete = (color) => {
     const newColor = color.hex;
-    const { dispatchThemeColor } = this.props;
-    dispatchThemeColor({ newColor });
+    const { dispatchChangeThemeColor } = this.props;
+    dispatchChangeThemeColor(newColor);
     this.postMessage({ theme_color: newColor });
   }
 
@@ -81,7 +81,7 @@ export class Visualizer extends Component {
 
 Visualizer.propTypes = {
   t: PropTypes.func.isRequired,
-  dispatchThemeColor: PropTypes.func.isRequired,
+  dispatchChangeThemeColor: PropTypes.func.isRequired,
   showHeader: PropTypes.bool.isRequired,
   themeColor: PropTypes.string.isRequired,
 };
@@ -92,7 +92,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  dispatchThemeColor: changeThemeColor,
+  dispatchChangeThemeColor: changeThemeColor,
 };
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Visualizer);
