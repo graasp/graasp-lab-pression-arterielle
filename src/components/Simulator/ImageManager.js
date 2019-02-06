@@ -20,11 +20,11 @@ export class ImageManager extends Component {
 
   handlePopoverOpen = (event) => {
     const val = event.currentTarget;
-    this.setState({ anchorEl: val });
+    this.setState({ anchorElCarotid: val });
   };
 
   handlePopoverClose = () => {
-    this.setState({ anchorEl: null });
+    this.setState({ anchorElCarotid: null });
   };
 
   handleHeartPopoverOpen = (event) => {
