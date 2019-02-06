@@ -12,6 +12,7 @@ import {
 import TeacherMode from '../modes/TeacherMode';
 import StudentMode from '../modes/StudentMode';
 import GraaspLogo from '../resources/GraaspLogo.svg';
+import './App.css';
 
 export class App extends Component {
   static propTypes = {
