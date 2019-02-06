@@ -31,4 +31,4 @@ LangBox.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withNamespaces('translations')(LangBox);
+export default withNamespaces()(LangBox);
