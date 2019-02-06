@@ -10,7 +10,7 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Visualizer from '../components/Visualizer';
+import Description from '../components/Content/Description';
 import Styles from './Styles';
 import { toggleSideMenu } from '../actions';
 
@@ -26,9 +26,7 @@ class SideMenu extends Component {
     const {
       classes,
       theme,
-      showHeader,
       showSideMenu,
-      themeColor,
       t,
     } = this.props;
 
@@ -51,11 +49,7 @@ class SideMenu extends Component {
             <h3>{t('Observe')}</h3>
           </div>
           <Divider />
-          <Visualizer
-            themeColor={themeColor}
-            t={t}
-            showHeader={showHeader}
-          />
+          <Description t={t} />
         </Drawer>
       </Fragment>
     );
@@ -65,10 +59,8 @@ class SideMenu extends Component {
 SideMenu.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   theme: PropTypes.shape({}).isRequired,
-  themeColor: PropTypes.string.isRequired,
   t: PropTypes.func.isRequired,
   dispatchToggleSideMenu: PropTypes.func.isRequired,
-  showHeader: PropTypes.bool.isRequired,
   showSideMenu: PropTypes.bool.isRequired,
 };
 
