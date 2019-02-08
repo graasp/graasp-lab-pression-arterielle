@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import MainView from '../views/MainView';
 import Header from '../layout/Header';
-import SettingManager from '../components/Content/SettingManager';
+import Settings from '../components/Content/Settings';
 import './CommonStyle.css';
 
 const TeacherMode = () => (
   <Fragment>
     <Header />
     <MainView />
-    <SettingManager />
+    <Settings />
   </Fragment>
 );
 
