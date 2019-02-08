@@ -36,7 +36,7 @@ const styles = theme => ({
   },
 });
 
-export class SettingManager extends Component {
+export class Settings extends Component {
   state = AppState;
 
   handleToggleHeader = showHeader => () => {
@@ -94,7 +94,7 @@ export class SettingManager extends Component {
       <div className="Setting-container">
         <Fab
           color="primary"
-          aria-label="Add"
+          aria-label="Settings"
           onClick={this.onOpenModal}
           className={classes.fab}
           style={{ backgroundColor: themeColor }}
@@ -129,7 +129,7 @@ export class SettingManager extends Component {
   }
 }
 
-SettingManager.propTypes = {
+Settings.propTypes = {
   t: PropTypes.func.isRequired,
   themeColor: PropTypes.string.isRequired,
   classes: PropTypes.shape({}).isRequired,
@@ -150,7 +150,7 @@ const mapDispatchToProps = {
   dispatchToggleHeader: toggleHeader,
 };
 
-const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(SettingManager);
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Settings);
 
 const StyledComponent = withStyles(styles)(ConnectedComponent);
 
