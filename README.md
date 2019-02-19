@@ -5,7 +5,7 @@ The influence of the section of the different nerves and their stimulation on th
 
 This Lab was created using [Graasp App Starter React](https://github.com/react-epfl/graasp-app-starter-react)
 
-![image](https://github.com/graasp/graasp-lab-arterial-pressure/blob/25/update-readme/public/preview.png)
+![image](https://github.com/graasp/graasp-lab-arterial-pressure/blob/develop/public/preview.png)
 ## Topic
 
 Biology
