@@ -6,7 +6,6 @@ import './Description.css';
 
 const Description = ({
   t,
-  applySection,
 }) => (
   <div className="Description-container">
     <h2>{t('Description')}</h2>
@@ -16,19 +15,16 @@ const Description = ({
     <p>
       {t('SelectOrgan')}
     </p>
-    <Explanation
-      applySection={applySection}
-    />
+    <Explanation />
   </div>
 );
 
 Description.propTypes = {
   t: PropTypes.func.isRequired,
-  applySection: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
-  themeColor: state.setting.themeColor,
+  themeColor: state.layout.themeColor,
 });
 
 const connectedComponent = connect(mapStateToProps)(Description);

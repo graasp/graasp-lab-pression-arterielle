@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
 import { Col } from 'reactstrap';
 
 const Explanation = ({
-  applySection,
+  showNerve,
   t,
 }) => (
   <div className="control-container">
     <Col xs={12} className="px-0">
-      { applySection ? (
+      { showNerve ? (
         <div className="explanation-content">
           <p>
             {t('Phase explanation')}
@@ -23,7 +24,13 @@ const Explanation = ({
 
 Explanation.propTypes = {
   t: PropTypes.func.isRequired,
-  applySection: PropTypes.bool.isRequired,
+  showNerve: PropTypes.bool.isRequired,
 };
 
-export default withNamespaces('translations')(Explanation);
+const mapStateToProps = state => ({
+  showNerve: state.layout.showNerve,
+});
+
+const ConnectedComponent = connect(mapStateToProps)(Explanation);
+
+export default withNamespaces()(ConnectedComponent);

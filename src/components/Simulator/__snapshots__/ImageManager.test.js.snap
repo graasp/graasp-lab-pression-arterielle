@@ -3,7 +3,7 @@
 exports[`render image manager component tests has one instance of image manager 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <WithStyles(ImageManager)
+  Symbol(enzyme.__unrendered__): <LoadNamespace(WithStyles(Connect(ImageManager)))
     applySection={false}
     handleBulbPopoverClose={[Function]}
     handleBulbPopoverOpen={[Function]}
@@ -22,6 +22,7 @@ ShallowWrapper {
     handleSympateticPopoverOpen={[Function]}
     heartBeat={false}
     pressure={false}
+    showNerve={false}
     t={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -35,69 +36,51 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
-      "applySection": false,
-      "classes": Object {
-        "paper": "ImageManager-paper-2",
-        "popover": "ImageManager-popover-1",
-      },
-      "handleBulbPopoverClose": [Function],
-      "handleBulbPopoverOpen": [Function],
-      "handleHeartPopoverClose": [Function],
-      "handleHeartPopoverOpen": [Function],
-      "handleHeringPopoverClose": [Function],
-      "handleHeringPopoverOpen": [Function],
-      "handleParaSympaPopoverClose": [Function],
-      "handleParaSympaPopoverOpen": [Function],
-      "handlePopoverClose": [Function],
-      "handlePopoverOpen": [Function],
-      "handleSection": [Function],
-      "handleSpinalPopoverClose": [Function],
-      "handleSpinalPopoverOpen": [Function],
-      "handleSympateticPopoverClose": [Function],
-      "handleSympateticPopoverOpen": [Function],
-      "heartBeat": false,
-      "pressure": false,
-      "t": [Function],
+      "children": [Function],
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": [Circular],
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": undefined,
+      "_currentValue2": undefined,
+      "unstable_read": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
-        "applySection": false,
-        "classes": Object {
-          "paper": "ImageManager-paper-2",
-          "popover": "ImageManager-popover-1",
-        },
-        "handleBulbPopoverClose": [Function],
-        "handleBulbPopoverOpen": [Function],
-        "handleHeartPopoverClose": [Function],
-        "handleHeartPopoverOpen": [Function],
-        "handleHeringPopoverClose": [Function],
-        "handleHeringPopoverOpen": [Function],
-        "handleParaSympaPopoverClose": [Function],
-        "handleParaSympaPopoverOpen": [Function],
-        "handlePopoverClose": [Function],
-        "handlePopoverOpen": [Function],
-        "handleSection": [Function],
-        "handleSpinalPopoverClose": [Function],
-        "handleSpinalPopoverOpen": [Function],
-        "handleSympateticPopoverClose": [Function],
-        "handleSympateticPopoverOpen": [Function],
-        "heartBeat": false,
-        "pressure": false,
-        "t": [Function],
+        "children": [Function],
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": [Circular],
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": undefined,
+        "_currentValue2": undefined,
+        "unstable_read": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
