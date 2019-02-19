@@ -44,7 +44,7 @@ class Header extends Component {
           </Typography>
           <IconButton
             color="inherit"
-            aria-label="Open drawer"
+            aria-label={t('Open Menu')}
             onClick={this.handleToggleSideMenu(true)}
             className={classNames(classes.menuButton, showSideMenu && classes.hide)}
             style={{ outline: 'none' }}
