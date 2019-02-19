@@ -1,34 +1,24 @@
 import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 
+import en from '../locale/en';
+import fr from '../locale/fr';
 
-const en = require('../locale/en.json');
-const fr = require('../locale/fr.json');
-
-i18n.use(LanguageDetector).init({
-  // we init with resources
+i18n.use(initReactI18next).init({
   resources: {
-    en: {
-      translations: en,
-    },
-    fr: {
-      translations: fr,
-    },
+    en,
+    fr,
   },
   fallbackLng: 'en',
-  debug: true,
-
-  // have a common namespace used around the full app
+  // debug only when not in production
+  debug: process.env.NODE_ENV !== 'production',
   ns: ['translations'],
   defaultNS: 'translations',
-
-  keySeparator: false, // we use content as keys
-
+  keySeparator: false,
   interpolation: {
-    escapeValue: false, // not needed for react!!
+    escapeValue: false,
     formatSeparator: ',',
   },
-
   react: {
     wait: true,
   },

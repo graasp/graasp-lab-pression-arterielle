@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withNamespaces } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { Col } from 'reactstrap';
 
 const Explanation = ({
@@ -33,4 +33,4 @@ const mapStateToProps = state => ({
 
 const ConnectedComponent = connect(mapStateToProps)(Explanation);
 
-export default withNamespaces()(ConnectedComponent);
+export default withTranslation()(ConnectedComponent);

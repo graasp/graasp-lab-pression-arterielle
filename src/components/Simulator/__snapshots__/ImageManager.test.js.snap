@@ -3,30 +3,28 @@
 exports[`render image manager component tests has one instance of image manager 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LoadNamespace(WithStyles(Connect(ImageManager)))
-    applySection={false}
-    handleBulbPopoverClose={[Function]}
-    handleBulbPopoverOpen={[Function]}
-    handleHeartPopoverClose={[Function]}
-    handleHeartPopoverOpen={[Function]}
-    handleHeringPopoverClose={[Function]}
-    handleHeringPopoverOpen={[Function]}
-    handleParaSympaPopoverClose={[Function]}
-    handleParaSympaPopoverOpen={[Function]}
-    handlePopoverClose={[Function]}
-    handlePopoverOpen={[Function]}
-    handleSection={[Function]}
-    handleSpinalPopoverClose={[Function]}
-    handleSpinalPopoverOpen={[Function]}
-    handleSympateticPopoverClose={[Function]}
-    handleSympateticPopoverOpen={[Function]}
-    heartBeat={false}
-    pressure={false}
+  Symbol(enzyme.__unrendered__): <Wrapper
+    handleBulbPopoverClose={[MockFunction]}
+    handleBulbPopoverOpen={[MockFunction]}
+    handleHeartPopoverClose={[MockFunction]}
+    handleHeartPopoverOpen={[MockFunction]}
+    handleHeringPopoverClose={[MockFunction]}
+    handleHeringPopoverOpen={[MockFunction]}
+    handleParaSympaPopoverClose={[MockFunction]}
+    handleParaSympaPopoverOpen={[MockFunction]}
+    handlePopoverClose={[MockFunction]}
+    handlePopoverOpen={[MockFunction]}
+    handleSpinalPopoverClose={[MockFunction]}
+    handleSpinalPopoverOpen={[MockFunction]}
+    handleSympateticPopoverClose={[MockFunction]}
+    handleSympateticPopoverOpen={[MockFunction]}
+    handleToggleNerveSection={[MockFunction]}
     showNerve={false}
-    t={[Function]}
-/>,
+    t={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
     "simulateError": [Function],
@@ -36,60 +34,72 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "children": [Function],
+      "handleBulbPopoverClose": [MockFunction],
+      "handleBulbPopoverOpen": [MockFunction],
+      "handleHeartPopoverClose": [MockFunction],
+      "handleHeartPopoverOpen": [MockFunction],
+      "handleHeringPopoverClose": [MockFunction],
+      "handleHeringPopoverOpen": [MockFunction],
+      "handleParaSympaPopoverClose": [MockFunction],
+      "handleParaSympaPopoverOpen": [MockFunction],
+      "handlePopoverClose": [MockFunction],
+      "handlePopoverOpen": [MockFunction],
+      "handleSpinalPopoverClose": [MockFunction],
+      "handleSpinalPopoverOpen": [MockFunction],
+      "handleSympateticPopoverClose": [MockFunction],
+      "handleSympateticPopoverOpen": [MockFunction],
+      "handleToggleNerveSection": [MockFunction],
+      "i18n": Object {},
+      "showNerve": false,
+      "t": [Function],
     },
     "ref": null,
-    "rendered": [Function],
-    "type": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": [Circular],
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": undefined,
-      "_currentValue2": undefined,
-      "unstable_read": [Function],
-    },
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "children": [Function],
+        "handleBulbPopoverClose": [MockFunction],
+        "handleBulbPopoverOpen": [MockFunction],
+        "handleHeartPopoverClose": [MockFunction],
+        "handleHeartPopoverOpen": [MockFunction],
+        "handleHeringPopoverClose": [MockFunction],
+        "handleHeringPopoverOpen": [MockFunction],
+        "handleParaSympaPopoverClose": [MockFunction],
+        "handleParaSympaPopoverOpen": [MockFunction],
+        "handlePopoverClose": [MockFunction],
+        "handlePopoverOpen": [MockFunction],
+        "handleSpinalPopoverClose": [MockFunction],
+        "handleSpinalPopoverOpen": [MockFunction],
+        "handleSympateticPopoverClose": [MockFunction],
+        "handleSympateticPopoverOpen": [MockFunction],
+        "handleToggleNerveSection": [MockFunction],
+        "i18n": Object {},
+        "showNerve": false,
+        "t": [Function],
       },
       "ref": null,
-      "rendered": [Function],
-      "type": Object {
-        "$$typeof": Symbol(react.context),
-        "Consumer": [Circular],
-        "Provider": Object {
-          "$$typeof": Symbol(react.provider),
-          "_context": [Circular],
-        },
-        "_calculateChangedBits": null,
-        "_currentRenderer": null,
-        "_currentRenderer2": null,
-        "_currentValue": undefined,
-        "_currentValue2": undefined,
-        "unstable_read": [Function],
-      },
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
         "lifecycles": Object {
           "componentDidUpdate": Object {
             "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
           },
           "getDerivedStateFromProps": true,
           "getSnapshotBeforeUpdate": true,
