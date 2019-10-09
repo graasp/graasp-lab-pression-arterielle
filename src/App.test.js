@@ -1,14 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './App';
+import { shallow } from 'enzyme';
+import { App } from './components/App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
+describe('<App />', () => {
   const props = {
+    i18n: {
+      defaultNS: '',
+      changeLanguage: jest.fn(),
+    },
     t: jest.fn(),
-    i18n: {},
+    loading: true,
+    dispatchGetContext: jest.fn(),
+    dispatchToggleLoader: jest.fn(),
+    dispatchGetAppInstance: jest.fn(),
   };
-
-  ReactDOM.render(<App {...props} />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const component = shallow(<App {...props} />);
+  it('renders correctly', () => {
+    expect(component).toMatchSnapshot();
+  });
 });
