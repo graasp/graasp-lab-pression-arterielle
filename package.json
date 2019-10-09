@@ -12,7 +12,7 @@
   "dependencies": {
     "@material-ui/core": "3.9.2",
     "@material-ui/icons": "3.0.2",
-    "bootstrap": "4.2.1",
+    "bootstrap": "4.3.1",
     "classnames": "2.2.6",
     "cross-env": "5.2.0",
     "env-cmd": "8.0.2",
