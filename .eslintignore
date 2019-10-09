@@ -2,3 +2,5 @@ build
 public
 src/registerServiceWorker.js
 cypress/integration/examples
+coverage
+dist
